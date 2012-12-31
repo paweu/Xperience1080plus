@@ -24,6 +24,12 @@
         <control type="image">
             <include>FullscreenDimensions</include>
             <texture>windows/common/overlay.png</texture>
+            <visible>!Skin.HasSetting(BackgroundOpacity)</visible>
+        </control>
+        <control type="image">
+            <include>FullscreenDimensions</include>
+            <texture>windows/common/overlay2.png</texture>
+            <visible>Skin.HasSetting(BackgroundOpacity)</visible>
         </control>
     </include>
 

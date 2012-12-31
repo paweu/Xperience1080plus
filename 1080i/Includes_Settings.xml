@@ -17,6 +17,15 @@
             <width>256</width>
             <height>293</height>
             <texture border="7">windows/home/tile.png</texture>
+            <visible>!Skin.HasSetting(BackgroundOpacity)</visible>
+        </control>
+        <control type="image">
+            <posx>14</posx>
+            <posy>0</posy>
+            <width>256</width>
+            <height>293</height>
+            <texture border="7">windows/home/tile2.png</texture>
+            <visible>Skin.HasSetting(BackgroundOpacity)</visible>
         </control>
         <control type="image">
             <posx>19</posx>
@@ -1769,6 +1778,10 @@
     <variable name="HomeProgramTile2"><value condition="Skin.HasSetting(HomeProgramTile2)">1</value></variable>
     <variable name="HomeProgramTile3"><value condition="Skin.HasSetting(HomeProgramTile3)">1</value></variable>
     <variable name="HomeProgramTile4"><value condition="Skin.HasSetting(HomeProgramTile4)">1</value></variable>
+    <variable name="HomeProgramTile5"><value condition="Skin.HasSetting(HomeProgramTile5)">1</value></variable>
+    <variable name="HomeProgramTile6"><value condition="Skin.HasSetting(HomeProgramTile6)">1</value></variable>
+    <variable name="HomeProgramTile7"><value condition="Skin.HasSetting(HomeProgramTile7)">1</value></variable>
+    <variable name="HomeProgramTile8"><value condition="Skin.HasSetting(HomeProgramTile8)">1</value></variable>
     
     <include name="PanelDialogHomeNewVideoTile1">
         <control type="grouplist" id="4">
@@ -3400,6 +3413,660 @@
         </control>
     </include>
     
+    <include name="PanelDialogHomeNewProgramTile5">
+        <control type="grouplist" id="4">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>532</width>
+            <height>360</height>
+            <itemgap>0</itemgap>
+            <onup>2406</onup>
+            <ondown>2405</ondown>
+            <onleft>5</onleft>
+            <onright>3</onright>
+            <scrolltime>0</scrolltime>
+            <orientation>vertical</orientation>
+            <control type="button" id="2141">
+                <include>SettingsCustomDialogButtonVars</include>
+                <label>$LOCALIZE[41138]</label>
+                <label2>$INFO[Skin.String(HomeProgramTile5.Label)]</label2>
+                <onclick>Skin.SetString(HomeProgramTile5.Label)</onclick>
+            </control>
+            <control type="button" id="2142">
+                <include>SettingsCustomDialogButtonVars</include>
+                <label>$LOCALIZE[41139]</label>
+                <label2>$INFO[Skin.String(HomeProgramTile5.Icon)]</label2>
+                <onclick>Skin.SetImage(HomeProgramTile5.Icon)</onclick>
+            </control>
+            <control type="radiobutton" id="2403">
+                <include>SettingsCustomDialogRadioButtonVars</include>
+                <label>$LOCALIZE[41156]</label>
+                <onclick condition="IsEmpty(Skin.String(HomeProgramTile5.ShowLabel))">Skin.SetString(HomeProgramTile5.ShowLabel,on)</onclick>
+                <onclick condition="!IsEmpty(Skin.String(HomeProgramTile5.ShowLabel))">Skin.Reset(HomeProgramTile5.ShowLabel)</onclick>
+                <selected>!IsEmpty(Skin.String(HomeProgramTile5.ShowLabel))</selected>
+            </control>
+            <control type="radiobutton" id="2404">
+                <include>SettingsCustomDialogRadioButtonVars</include>
+                <label>$LOCALIZE[41160]</label>
+                <onclick condition="IsEmpty(Skin.String(HomeProgramTile5.Animate))">Skin.SetString(HomeProgramTile5.Animate,on)</onclick>
+                <onclick condition="!IsEmpty(Skin.String(HomeProgramTile5.Animate))">Skin.Reset(HomeProgramTile5.Animate)</onclick>
+                <selected>!IsEmpty(Skin.String(HomeProgramTile5.Animate))</selected>
+            </control>
+        </control>
+        
+        <control type="group">
+            <control type="image">
+                <posx>0</posx>
+                <posy>240</posy>
+                <width>532</width>
+                <height>60</height>
+                <texture border="2">dialogs/default/highlight.png</texture>
+                <aspectratio>stretch</aspectratio>
+                <visible>ControlGroup(2405).HasFocus</visible>
+            </control>
+            <control type="button">
+                <posx>0</posx>
+                <posy>240</posy>
+                <width>455</width>
+                <height>60</height>
+                <align>left</align>
+                <textoffsetx>20</textoffsetx>
+                <font>Font-Condensed-S30</font>
+                <textcolor>FF585858</textcolor>
+                <label>$LOCALIZE[41141]</label>
+                <label2>$INFO[Skin.String(HomeProgramTile5.TypeName)]</label2>
+                <visible>!ControlGroup(2405).HasFocus</visible>
+            </control>
+            <control type="button">
+                <posx>0</posx>
+                <posy>240</posy>
+                <width>455</width>
+                <height>60</height>
+                <align>left</align>
+                <textoffsetx>20</textoffsetx>
+                <font>Font-Condensed-S30</font>
+                <textcolor>eewhite</textcolor>
+                <label>$LOCALIZE[41141]</label>
+                <label2>$INFO[Skin.String(HomeProgramTile5.TypeName)]</label2>
+                <visible>ControlGroup(2405).HasFocus</visible>
+            </control>
+        </control>
+        
+        <control type="grouplist" id="2405">
+            <description>button area</description>
+            <posx>439</posx>
+            <posy>240</posy>
+            <width>120</width>
+            <height>60</height>
+            <itemgap>0</itemgap>
+            <onleft>5</onleft>
+            <onright>3</onright>
+            <onup>2404</onup>
+            <ondown>2406</ondown>
+            <orientation>horizontal</orientation>
+            <control type="button" id="24051">
+                <width>43</width>
+                <height>60</height>
+                <texturefocus>buttons/spinctrl/arrow-light-down-fo.png</texturefocus>
+                <texturenofocus>buttons/spinctrl/arrow-light-down-nf.png</texturenofocus>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),7)">Skin.SetString(HomeProgramTile5.Type,0)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),7)">Skin.SetString(HomeProgramTile5.TypeName,$LOCALIZE[41145])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),6)">Skin.SetString(HomeProgramTile5.Type,7)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),6)">Skin.SetString(HomeProgramTile5.TypeName,$LOCALIZE[41151])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),5)">Skin.SetString(HomeProgramTile5.Type,6)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),5)">Skin.SetString(HomeProgramTile5.TypeName,$LOCALIZE[41153])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),4)">Skin.SetString(HomeProgramTile5.Type,5)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),4)">Skin.SetString(HomeProgramTile5.TypeName,$LOCALIZE[41150])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),3)">Skin.SetString(HomeProgramTile5.Type,4)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),3)">Skin.SetString(HomeProgramTile5.TypeName,$LOCALIZE[41149])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),2)">Skin.SetString(HomeProgramTile5.Type,3)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),2)">Skin.SetString(HomeProgramTile5.TypeName,$LOCALIZE[41148])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),1)">Skin.SetString(HomeProgramTile5.Type,2)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),1)">Skin.SetString(HomeProgramTile5.TypeName,$LOCALIZE[41147])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),0)">Skin.SetString(HomeProgramTile5.Type,1)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),0)">Skin.SetString(HomeProgramTile5.TypeName,$LOCALIZE[41146])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),7)">Skin.SetString(HomeProgramTile5.Type,0)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),7)">Skin.SetString(HomeProgramTile5.TypeName,$LOCALIZE[41145])</onclick>
+            </control>
+            <control type="button" id="24052">
+                <width>43</width>
+                <height>60</height>
+                <texturefocus>buttons/spinctrl/arrow-light-up-fo.png</texturefocus>
+                <texturenofocus>buttons/spinctrl/arrow-light-up-nf.png</texturenofocus>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),0)">Skin.SetString(HomeProgramTile5.Type,7)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),0)">Skin.SetString(HomeProgramTile5.TypeName,$LOCALIZE[41151])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),1)">Skin.SetString(HomeProgramTile5.Type,0)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),1)">Skin.SetString(HomeProgramTile5.TypeName,$LOCALIZE[41145])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),2)">Skin.SetString(HomeProgramTile5.Type,1)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),2)">Skin.SetString(HomeProgramTile5.TypeName,$LOCALIZE[41146])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),3)">Skin.SetString(HomeProgramTile5.Type,2)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),3)">Skin.SetString(HomeProgramTile5.TypeName,$LOCALIZE[41147])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),4)">Skin.SetString(HomeProgramTile5.Type,3)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),4)">Skin.SetString(HomeProgramTile5.TypeName,$LOCALIZE[41148])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),5)">Skin.SetString(HomeProgramTile5.Type,4)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),5)">Skin.SetString(HomeProgramTile5.TypeName,$LOCALIZE[41149])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),6)">Skin.SetString(HomeProgramTile5.Type,5)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),6)">Skin.SetString(HomeProgramTile5.TypeName,$LOCALIZE[41150])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),7)">Skin.SetString(HomeProgramTile5.Type,6)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),7)">Skin.SetString(HomeProgramTile5.TypeName,$LOCALIZE[41153])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),0)">Skin.SetString(HomeProgramTile5.Type,7)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),0)">Skin.SetString(HomeProgramTile5.TypeName,$LOCALIZE[41151])</onclick>
+            </control>
+        </control>
+        
+        <control type="button" id="2406">
+            <posx>0</posx>
+            <posy>300</posy>
+            <onleft>5</onleft>
+            <onright>3</onright>
+            <onup>2405</onup>
+            <ondown>2141</ondown>
+            <include>SettingsCustomDialogButtonVars</include>
+            <label>$LOCALIZE[41142]</label>
+            <label2>$INFO[Skin.String(HomeProgramTile5.Path)]</label2>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),0)|stringcompare(Skin.String(HomeProgramTile5.Type),1)|stringcompare(Skin.String(HomeProgramTile5.Type),2)|stringcompare(Skin.String(HomeProgramTile5.Type),3)">SetProperty(Property,HomeProgramTile5,selectdialog)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),0)">Skin.SetAddon(HomeProgramTile5.Path,xbmc.addon.video)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),1)">Skin.SetAddon(HomeProgramTile5.Path,xbmc.addon.audio)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),2)">Skin.SetAddon(HomeProgramTile5.Path,xbmc.addon.image)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),3)">Skin.SetAddon(HomeProgramTile5.Path,xbmc.addon.executable)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),4)">Skin.SetFile(HomeProgramTile5.Path,.xsp|.m3u,special://userdata/playlists/video/)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),5)">Skin.SetFile(HomeProgramTile5.Path,.xsp|.m3u,special://userdata/playlists/music/)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),6)">RunScript(script.favourites,property=HomeProgramTile5)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),7)">Skin.SetString(HomeProgramTile5.Path)</onclick>
+        </control>
+    </include>
+
+    <include name="PanelDialogHomeNewProgramTile6">
+        <control type="grouplist" id="4">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>532</width>
+            <height>360</height>
+            <itemgap>0</itemgap>
+            <onup>2406</onup>
+            <ondown>2405</ondown>
+            <onleft>5</onleft>
+            <onright>3</onright>
+            <scrolltime>0</scrolltime>
+            <orientation>vertical</orientation>
+            <control type="button" id="2141">
+                <include>SettingsCustomDialogButtonVars</include>
+                <label>$LOCALIZE[41138]</label>
+                <label2>$INFO[Skin.String(HomeProgramTile6.Label)]</label2>
+                <onclick>Skin.SetString(HomeProgramTile6.Label)</onclick>
+            </control>
+            <control type="button" id="2142">
+                <include>SettingsCustomDialogButtonVars</include>
+                <label>$LOCALIZE[41139]</label>
+                <label2>$INFO[Skin.String(HomeProgramTile6.Icon)]</label2>
+                <onclick>Skin.SetImage(HomeProgramTile6.Icon)</onclick>
+            </control>
+            <control type="radiobutton" id="2403">
+                <include>SettingsCustomDialogRadioButtonVars</include>
+                <label>$LOCALIZE[41156]</label>
+                <onclick condition="IsEmpty(Skin.String(HomeProgramTile6.ShowLabel))">Skin.SetString(HomeProgramTile6.ShowLabel,on)</onclick>
+                <onclick condition="!IsEmpty(Skin.String(HomeProgramTile6.ShowLabel))">Skin.Reset(HomeProgramTile6.ShowLabel)</onclick>
+                <selected>!IsEmpty(Skin.String(HomeProgramTile6.ShowLabel))</selected>
+            </control>
+            <control type="radiobutton" id="2404">
+                <include>SettingsCustomDialogRadioButtonVars</include>
+                <label>$LOCALIZE[41160]</label>
+                <onclick condition="IsEmpty(Skin.String(HomeProgramTile6.Animate))">Skin.SetString(HomeProgramTile6.Animate,on)</onclick>
+                <onclick condition="!IsEmpty(Skin.String(HomeProgramTile6.Animate))">Skin.Reset(HomeProgramTile6.Animate)</onclick>
+                <selected>!IsEmpty(Skin.String(HomeProgramTile6.Animate))</selected>
+            </control>
+        </control>
+        
+        <control type="group">
+            <control type="image">
+                <posx>0</posx>
+                <posy>240</posy>
+                <width>532</width>
+                <height>60</height>
+                <texture border="2">dialogs/default/highlight.png</texture>
+                <aspectratio>stretch</aspectratio>
+                <visible>ControlGroup(2405).HasFocus</visible>
+            </control>
+            <control type="button">
+                <posx>0</posx>
+                <posy>240</posy>
+                <width>455</width>
+                <height>60</height>
+                <align>left</align>
+                <textoffsetx>20</textoffsetx>
+                <font>Font-Condensed-S30</font>
+                <textcolor>FF585858</textcolor>
+                <label>$LOCALIZE[41141]</label>
+                <label2>$INFO[Skin.String(HomeProgramTile6.TypeName)]</label2>
+                <visible>!ControlGroup(2405).HasFocus</visible>
+            </control>
+            <control type="button">
+                <posx>0</posx>
+                <posy>240</posy>
+                <width>455</width>
+                <height>60</height>
+                <align>left</align>
+                <textoffsetx>20</textoffsetx>
+                <font>Font-Condensed-S30</font>
+                <textcolor>eewhite</textcolor>
+                <label>$LOCALIZE[41141]</label>
+                <label2>$INFO[Skin.String(HomeProgramTile6.TypeName)]</label2>
+                <visible>ControlGroup(2405).HasFocus</visible>
+            </control>
+        </control>
+        
+        <control type="grouplist" id="2405">
+            <description>button area</description>
+            <posx>439</posx>
+            <posy>240</posy>
+            <width>120</width>
+            <height>60</height>
+            <itemgap>0</itemgap>
+            <onleft>5</onleft>
+            <onright>3</onright>
+            <onup>2404</onup>
+            <ondown>2406</ondown>
+            <orientation>horizontal</orientation>
+            <control type="button" id="24051">
+                <width>43</width>
+                <height>60</height>
+                <texturefocus>buttons/spinctrl/arrow-light-down-fo.png</texturefocus>
+                <texturenofocus>buttons/spinctrl/arrow-light-down-nf.png</texturenofocus>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),7)">Skin.SetString(HomeProgramTile6.Type,0)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),7)">Skin.SetString(HomeProgramTile6.TypeName,$LOCALIZE[41145])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),6)">Skin.SetString(HomeProgramTile6.Type,7)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),6)">Skin.SetString(HomeProgramTile6.TypeName,$LOCALIZE[41151])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),5)">Skin.SetString(HomeProgramTile6.Type,6)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),5)">Skin.SetString(HomeProgramTile6.TypeName,$LOCALIZE[41153])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),4)">Skin.SetString(HomeProgramTile6.Type,5)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),4)">Skin.SetString(HomeProgramTile6.TypeName,$LOCALIZE[41150])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),3)">Skin.SetString(HomeProgramTile6.Type,4)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),3)">Skin.SetString(HomeProgramTile6.TypeName,$LOCALIZE[41149])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),2)">Skin.SetString(HomeProgramTile6.Type,3)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),2)">Skin.SetString(HomeProgramTile6.TypeName,$LOCALIZE[41148])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),1)">Skin.SetString(HomeProgramTile6.Type,2)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),1)">Skin.SetString(HomeProgramTile6.TypeName,$LOCALIZE[41147])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),0)">Skin.SetString(HomeProgramTile6.Type,1)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),0)">Skin.SetString(HomeProgramTile6.TypeName,$LOCALIZE[41146])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),7)">Skin.SetString(HomeProgramTile6.Type,0)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),7)">Skin.SetString(HomeProgramTile6.TypeName,$LOCALIZE[41145])</onclick>
+            </control>
+            <control type="button" id="24052">
+                <width>43</width>
+                <height>60</height>
+                <texturefocus>buttons/spinctrl/arrow-light-up-fo.png</texturefocus>
+                <texturenofocus>buttons/spinctrl/arrow-light-up-nf.png</texturenofocus>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),0)">Skin.SetString(HomeProgramTile6.Type,7)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),0)">Skin.SetString(HomeProgramTile6.TypeName,$LOCALIZE[41151])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),1)">Skin.SetString(HomeProgramTile6.Type,0)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),1)">Skin.SetString(HomeProgramTile6.TypeName,$LOCALIZE[41145])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),2)">Skin.SetString(HomeProgramTile6.Type,1)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),2)">Skin.SetString(HomeProgramTile6.TypeName,$LOCALIZE[41146])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),3)">Skin.SetString(HomeProgramTile6.Type,2)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),3)">Skin.SetString(HomeProgramTile6.TypeName,$LOCALIZE[41147])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),4)">Skin.SetString(HomeProgramTile6.Type,3)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),4)">Skin.SetString(HomeProgramTile6.TypeName,$LOCALIZE[41148])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),5)">Skin.SetString(HomeProgramTile6.Type,4)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),5)">Skin.SetString(HomeProgramTile6.TypeName,$LOCALIZE[41149])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),6)">Skin.SetString(HomeProgramTile6.Type,5)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),6)">Skin.SetString(HomeProgramTile6.TypeName,$LOCALIZE[41150])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),7)">Skin.SetString(HomeProgramTile6.Type,6)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),7)">Skin.SetString(HomeProgramTile6.TypeName,$LOCALIZE[41153])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),0)">Skin.SetString(HomeProgramTile6.Type,7)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),0)">Skin.SetString(HomeProgramTile6.TypeName,$LOCALIZE[41151])</onclick>
+            </control>
+        </control>
+        
+        <control type="button" id="2406">
+            <posx>0</posx>
+            <posy>300</posy>
+            <onleft>5</onleft>
+            <onright>3</onright>
+            <onup>2405</onup>
+            <ondown>2141</ondown>
+            <include>SettingsCustomDialogButtonVars</include>
+            <label>$LOCALIZE[41142]</label>
+            <label2>$INFO[Skin.String(HomeProgramTile6.Path)]</label2>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),0)|stringcompare(Skin.String(HomeProgramTile6.Type),1)|stringcompare(Skin.String(HomeProgramTile6.Type),2)|stringcompare(Skin.String(HomeProgramTile6.Type),3)">SetProperty(Property,HomeProgramTile6,selectdialog)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),0)">Skin.SetAddon(HomeProgramTile6.Path,xbmc.addon.video)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),1)">Skin.SetAddon(HomeProgramTile6.Path,xbmc.addon.audio)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),2)">Skin.SetAddon(HomeProgramTile6.Path,xbmc.addon.image)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),3)">Skin.SetAddon(HomeProgramTile6.Path,xbmc.addon.executable)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),4)">Skin.SetFile(HomeProgramTile6.Path,.xsp|.m3u,special://userdata/playlists/video/)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),5)">Skin.SetFile(HomeProgramTile6.Path,.xsp|.m3u,special://userdata/playlists/music/)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),6)">RunScript(script.favourites,property=HomeProgramTile6)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile6.Type),7)">Skin.SetString(HomeProgramTile6.Path)</onclick>
+        </control>
+    </include>
+
+    <include name="PanelDialogHomeNewProgramTile7">
+        <control type="grouplist" id="4">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>532</width>
+            <height>360</height>
+            <itemgap>0</itemgap>
+            <onup>2406</onup>
+            <ondown>2405</ondown>
+            <onleft>5</onleft>
+            <onright>3</onright>
+            <scrolltime>0</scrolltime>
+            <orientation>vertical</orientation>
+            <control type="button" id="2141">
+                <include>SettingsCustomDialogButtonVars</include>
+                <label>$LOCALIZE[41138]</label>
+                <label2>$INFO[Skin.String(HomeProgramTile7.Label)]</label2>
+                <onclick>Skin.SetString(HomeProgramTile7.Label)</onclick>
+            </control>
+            <control type="button" id="2142">
+                <include>SettingsCustomDialogButtonVars</include>
+                <label>$LOCALIZE[41139]</label>
+                <label2>$INFO[Skin.String(HomeProgramTile7.Icon)]</label2>
+                <onclick>Skin.SetImage(HomeProgramTile7.Icon)</onclick>
+            </control>
+            <control type="radiobutton" id="2403">
+                <include>SettingsCustomDialogRadioButtonVars</include>
+                <label>$LOCALIZE[41156]</label>
+                <onclick condition="IsEmpty(Skin.String(HomeProgramTile7.ShowLabel))">Skin.SetString(HomeProgramTile7.ShowLabel,on)</onclick>
+                <onclick condition="!IsEmpty(Skin.String(HomeProgramTile7.ShowLabel))">Skin.Reset(HomeProgramTile7.ShowLabel)</onclick>
+                <selected>!IsEmpty(Skin.String(HomeProgramTile7.ShowLabel))</selected>
+            </control>
+            <control type="radiobutton" id="2404">
+                <include>SettingsCustomDialogRadioButtonVars</include>
+                <label>$LOCALIZE[41160]</label>
+                <onclick condition="IsEmpty(Skin.String(HomeProgramTile7.Animate))">Skin.SetString(HomeProgramTile7.Animate,on)</onclick>
+                <onclick condition="!IsEmpty(Skin.String(HomeProgramTile7.Animate))">Skin.Reset(HomeProgramTile7.Animate)</onclick>
+                <selected>!IsEmpty(Skin.String(HomeProgramTile7.Animate))</selected>
+            </control>
+        </control>
+        
+        <control type="group">
+            <control type="image">
+                <posx>0</posx>
+                <posy>240</posy>
+                <width>532</width>
+                <height>60</height>
+                <texture border="2">dialogs/default/highlight.png</texture>
+                <aspectratio>stretch</aspectratio>
+                <visible>ControlGroup(2405).HasFocus</visible>
+            </control>
+            <control type="button">
+                <posx>0</posx>
+                <posy>240</posy>
+                <width>455</width>
+                <height>60</height>
+                <align>left</align>
+                <textoffsetx>20</textoffsetx>
+                <font>Font-Condensed-S30</font>
+                <textcolor>FF585858</textcolor>
+                <label>$LOCALIZE[41141]</label>
+                <label2>$INFO[Skin.String(HomeProgramTile7.TypeName)]</label2>
+                <visible>!ControlGroup(2405).HasFocus</visible>
+            </control>
+            <control type="button">
+                <posx>0</posx>
+                <posy>240</posy>
+                <width>455</width>
+                <height>60</height>
+                <align>left</align>
+                <textoffsetx>20</textoffsetx>
+                <font>Font-Condensed-S30</font>
+                <textcolor>eewhite</textcolor>
+                <label>$LOCALIZE[41141]</label>
+                <label2>$INFO[Skin.String(HomeProgramTile7.TypeName)]</label2>
+                <visible>ControlGroup(2405).HasFocus</visible>
+            </control>
+        </control>
+        
+        <control type="grouplist" id="2405">
+            <description>button area</description>
+            <posx>439</posx>
+            <posy>240</posy>
+            <width>120</width>
+            <height>60</height>
+            <itemgap>0</itemgap>
+            <onleft>5</onleft>
+            <onright>3</onright>
+            <onup>2404</onup>
+            <ondown>2406</ondown>
+            <orientation>horizontal</orientation>
+            <control type="button" id="24051">
+                <width>43</width>
+                <height>60</height>
+                <texturefocus>buttons/spinctrl/arrow-light-down-fo.png</texturefocus>
+                <texturenofocus>buttons/spinctrl/arrow-light-down-nf.png</texturenofocus>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),7)">Skin.SetString(HomeProgramTile7.Type,0)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),7)">Skin.SetString(HomeProgramTile7.TypeName,$LOCALIZE[41145])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),6)">Skin.SetString(HomeProgramTile7.Type,7)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),6)">Skin.SetString(HomeProgramTile7.TypeName,$LOCALIZE[41151])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),5)">Skin.SetString(HomeProgramTile7.Type,6)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),5)">Skin.SetString(HomeProgramTile7.TypeName,$LOCALIZE[41153])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),4)">Skin.SetString(HomeProgramTile7.Type,5)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),4)">Skin.SetString(HomeProgramTile7.TypeName,$LOCALIZE[41150])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),3)">Skin.SetString(HomeProgramTile7.Type,4)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),3)">Skin.SetString(HomeProgramTile7.TypeName,$LOCALIZE[41149])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),2)">Skin.SetString(HomeProgramTile7.Type,3)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),2)">Skin.SetString(HomeProgramTile7.TypeName,$LOCALIZE[41148])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),1)">Skin.SetString(HomeProgramTile7.Type,2)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),1)">Skin.SetString(HomeProgramTile7.TypeName,$LOCALIZE[41147])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),0)">Skin.SetString(HomeProgramTile7.Type,1)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),0)">Skin.SetString(HomeProgramTile7.TypeName,$LOCALIZE[41146])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),7)">Skin.SetString(HomeProgramTile7.Type,0)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),7)">Skin.SetString(HomeProgramTile7.TypeName,$LOCALIZE[41145])</onclick>
+            </control>
+            <control type="button" id="24052">
+                <width>43</width>
+                <height>60</height>
+                <texturefocus>buttons/spinctrl/arrow-light-up-fo.png</texturefocus>
+                <texturenofocus>buttons/spinctrl/arrow-light-up-nf.png</texturenofocus>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),0)">Skin.SetString(HomeProgramTile7.Type,7)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),0)">Skin.SetString(HomeProgramTile7.TypeName,$LOCALIZE[41151])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),1)">Skin.SetString(HomeProgramTile7.Type,0)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),1)">Skin.SetString(HomeProgramTile7.TypeName,$LOCALIZE[41145])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),2)">Skin.SetString(HomeProgramTile7.Type,1)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),2)">Skin.SetString(HomeProgramTile7.TypeName,$LOCALIZE[41146])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),3)">Skin.SetString(HomeProgramTile7.Type,2)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),3)">Skin.SetString(HomeProgramTile7.TypeName,$LOCALIZE[41147])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),4)">Skin.SetString(HomeProgramTile7.Type,3)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),4)">Skin.SetString(HomeProgramTile7.TypeName,$LOCALIZE[41148])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),5)">Skin.SetString(HomeProgramTile7.Type,4)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),5)">Skin.SetString(HomeProgramTile7.TypeName,$LOCALIZE[41149])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),6)">Skin.SetString(HomeProgramTile7.Type,5)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),6)">Skin.SetString(HomeProgramTile7.TypeName,$LOCALIZE[41150])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),7)">Skin.SetString(HomeProgramTile7.Type,6)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),7)">Skin.SetString(HomeProgramTile7.TypeName,$LOCALIZE[41153])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),0)">Skin.SetString(HomeProgramTile7.Type,7)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),0)">Skin.SetString(HomeProgramTile7.TypeName,$LOCALIZE[41151])</onclick>
+            </control>
+        </control>
+        
+        <control type="button" id="2406">
+            <posx>0</posx>
+            <posy>300</posy>
+            <onleft>5</onleft>
+            <onright>3</onright>
+            <onup>2405</onup>
+            <ondown>2141</ondown>
+            <include>SettingsCustomDialogButtonVars</include>
+            <label>$LOCALIZE[41142]</label>
+            <label2>$INFO[Skin.String(HomeProgramTile7.Path)]</label2>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),0)|stringcompare(Skin.String(HomeProgramTile7.Type),1)|stringcompare(Skin.String(HomeProgramTile7.Type),2)|stringcompare(Skin.String(HomeProgramTile7.Type),3)">SetProperty(Property,HomeProgramTile7,selectdialog)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),0)">Skin.SetAddon(HomeProgramTile7.Path,xbmc.addon.video)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),1)">Skin.SetAddon(HomeProgramTile7.Path,xbmc.addon.audio)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),2)">Skin.SetAddon(HomeProgramTile7.Path,xbmc.addon.image)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),3)">Skin.SetAddon(HomeProgramTile7.Path,xbmc.addon.executable)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),4)">Skin.SetFile(HomeProgramTile7.Path,.xsp|.m3u,special://userdata/playlists/video/)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),5)">Skin.SetFile(HomeProgramTile7.Path,.xsp|.m3u,special://userdata/playlists/music/)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),6)">RunScript(script.favourites,property=HomeProgramTile7)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile7.Type),7)">Skin.SetString(HomeProgramTile7.Path)</onclick>
+        </control>
+    </include>
+    
+    <include name="PanelDialogHomeNewProgramTile8">
+        <control type="grouplist" id="4">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>532</width>
+            <height>360</height>
+            <itemgap>0</itemgap>
+            <onup>2406</onup>
+            <ondown>2405</ondown>
+            <onleft>5</onleft>
+            <onright>3</onright>
+            <scrolltime>0</scrolltime>
+            <orientation>vertical</orientation>
+            <control type="button" id="2141">
+                <include>SettingsCustomDialogButtonVars</include>
+                <label>$LOCALIZE[41138]</label>
+                <label2>$INFO[Skin.String(HomeProgramTile8.Label)]</label2>
+                <onclick>Skin.SetString(HomeProgramTile8.Label)</onclick>
+            </control>
+            <control type="button" id="2142">
+                <include>SettingsCustomDialogButtonVars</include>
+                <label>$LOCALIZE[41139]</label>
+                <label2>$INFO[Skin.String(HomeProgramTile8.Icon)]</label2>
+                <onclick>Skin.SetImage(HomeProgramTile8.Icon)</onclick>
+            </control>
+            <control type="radiobutton" id="2403">
+                <include>SettingsCustomDialogRadioButtonVars</include>
+                <label>$LOCALIZE[41156]</label>
+                <onclick condition="IsEmpty(Skin.String(HomeProgramTile8.ShowLabel))">Skin.SetString(HomeProgramTile8.ShowLabel,on)</onclick>
+                <onclick condition="!IsEmpty(Skin.String(HomeProgramTile8.ShowLabel))">Skin.Reset(HomeProgramTile8.ShowLabel)</onclick>
+                <selected>!IsEmpty(Skin.String(HomeProgramTile8.ShowLabel))</selected>
+            </control>
+            <control type="radiobutton" id="2404">
+                <include>SettingsCustomDialogRadioButtonVars</include>
+                <label>$LOCALIZE[41160]</label>
+                <onclick condition="IsEmpty(Skin.String(HomeProgramTile8.Animate))">Skin.SetString(HomeProgramTile8.Animate,on)</onclick>
+                <onclick condition="!IsEmpty(Skin.String(HomeProgramTile8.Animate))">Skin.Reset(HomeProgramTile8.Animate)</onclick>
+                <selected>!IsEmpty(Skin.String(HomeProgramTile8.Animate))</selected>
+            </control>
+        </control>
+        
+        <control type="group">
+            <control type="image">
+                <posx>0</posx>
+                <posy>240</posy>
+                <width>532</width>
+                <height>60</height>
+                <texture border="2">dialogs/default/highlight.png</texture>
+                <aspectratio>stretch</aspectratio>
+                <visible>ControlGroup(2405).HasFocus</visible>
+            </control>
+            <control type="button">
+                <posx>0</posx>
+                <posy>240</posy>
+                <width>455</width>
+                <height>60</height>
+                <align>left</align>
+                <textoffsetx>20</textoffsetx>
+                <font>Font-Condensed-S30</font>
+                <textcolor>FF585858</textcolor>
+                <label>$LOCALIZE[41141]</label>
+                <label2>$INFO[Skin.String(HomeProgramTile8.TypeName)]</label2>
+                <visible>!ControlGroup(2405).HasFocus</visible>
+            </control>
+            <control type="button">
+                <posx>0</posx>
+                <posy>240</posy>
+                <width>455</width>
+                <height>60</height>
+                <align>left</align>
+                <textoffsetx>20</textoffsetx>
+                <font>Font-Condensed-S30</font>
+                <textcolor>eewhite</textcolor>
+                <label>$LOCALIZE[41141]</label>
+                <label2>$INFO[Skin.String(HomeProgramTile8.TypeName)]</label2>
+                <visible>ControlGroup(2405).HasFocus</visible>
+            </control>
+        </control>
+        
+        <control type="grouplist" id="2405">
+            <description>button area</description>
+            <posx>439</posx>
+            <posy>240</posy>
+            <width>120</width>
+            <height>60</height>
+            <itemgap>0</itemgap>
+            <onleft>5</onleft>
+            <onright>3</onright>
+            <onup>2404</onup>
+            <ondown>2406</ondown>
+            <orientation>horizontal</orientation>
+            <control type="button" id="24051">
+                <width>43</width>
+                <height>60</height>
+                <texturefocus>buttons/spinctrl/arrow-light-down-fo.png</texturefocus>
+                <texturenofocus>buttons/spinctrl/arrow-light-down-nf.png</texturenofocus>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),7)">Skin.SetString(HomeProgramTile8.Type,0)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),7)">Skin.SetString(HomeProgramTile8.TypeName,$LOCALIZE[41145])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),6)">Skin.SetString(HomeProgramTile8.Type,7)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),6)">Skin.SetString(HomeProgramTile8.TypeName,$LOCALIZE[41151])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),5)">Skin.SetString(HomeProgramTile8.Type,6)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),5)">Skin.SetString(HomeProgramTile8.TypeName,$LOCALIZE[41153])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),4)">Skin.SetString(HomeProgramTile8.Type,5)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),4)">Skin.SetString(HomeProgramTile8.TypeName,$LOCALIZE[41150])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),3)">Skin.SetString(HomeProgramTile8.Type,4)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),3)">Skin.SetString(HomeProgramTile8.TypeName,$LOCALIZE[41149])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),2)">Skin.SetString(HomeProgramTile8.Type,3)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),2)">Skin.SetString(HomeProgramTile8.TypeName,$LOCALIZE[41148])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),1)">Skin.SetString(HomeProgramTile8.Type,2)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),1)">Skin.SetString(HomeProgramTile8.TypeName,$LOCALIZE[41147])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),0)">Skin.SetString(HomeProgramTile8.Type,1)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),0)">Skin.SetString(HomeProgramTile8.TypeName,$LOCALIZE[41146])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),7)">Skin.SetString(HomeProgramTile8.Type,0)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),7)">Skin.SetString(HomeProgramTile8.TypeName,$LOCALIZE[41145])</onclick>
+            </control>
+            <control type="button" id="24052">
+                <width>43</width>
+                <height>60</height>
+                <texturefocus>buttons/spinctrl/arrow-light-up-fo.png</texturefocus>
+                <texturenofocus>buttons/spinctrl/arrow-light-up-nf.png</texturenofocus>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),0)">Skin.SetString(HomeProgramTile8.Type,7)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),0)">Skin.SetString(HomeProgramTile8.TypeName,$LOCALIZE[41151])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),1)">Skin.SetString(HomeProgramTile8.Type,0)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),1)">Skin.SetString(HomeProgramTile8.TypeName,$LOCALIZE[41145])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),2)">Skin.SetString(HomeProgramTile8.Type,1)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),2)">Skin.SetString(HomeProgramTile8.TypeName,$LOCALIZE[41146])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),3)">Skin.SetString(HomeProgramTile8.Type,2)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),3)">Skin.SetString(HomeProgramTile8.TypeName,$LOCALIZE[41147])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),4)">Skin.SetString(HomeProgramTile8.Type,3)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),4)">Skin.SetString(HomeProgramTile8.TypeName,$LOCALIZE[41148])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),5)">Skin.SetString(HomeProgramTile8.Type,4)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),5)">Skin.SetString(HomeProgramTile8.TypeName,$LOCALIZE[41149])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),6)">Skin.SetString(HomeProgramTile8.Type,5)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),6)">Skin.SetString(HomeProgramTile8.TypeName,$LOCALIZE[41150])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),7)">Skin.SetString(HomeProgramTile8.Type,6)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),7)">Skin.SetString(HomeProgramTile8.TypeName,$LOCALIZE[41153])</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),0)">Skin.SetString(HomeProgramTile8.Type,7)</onclick>
+                <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),0)">Skin.SetString(HomeProgramTile8.TypeName,$LOCALIZE[41151])</onclick>
+            </control>
+        </control>
+        
+        <control type="button" id="2406">
+            <posx>0</posx>
+            <posy>300</posy>
+            <onleft>5</onleft>
+            <onright>3</onright>
+            <onup>2405</onup>
+            <ondown>2141</ondown>
+            <include>SettingsCustomDialogButtonVars</include>
+            <label>$LOCALIZE[41142]</label>
+            <label2>$INFO[Skin.String(HomeProgramTile8.Path)]</label2>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),0)|stringcompare(Skin.String(HomeProgramTile8.Type),1)|stringcompare(Skin.String(HomeProgramTile8.Type),2)|stringcompare(Skin.String(HomeProgramTile8.Type),3)">SetProperty(Property,HomeProgramTile8,selectdialog)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),0)">Skin.SetAddon(HomeProgramTile8.Path,xbmc.addon.video)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),1)">Skin.SetAddon(HomeProgramTile8.Path,xbmc.addon.audio)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),2)">Skin.SetAddon(HomeProgramTile8.Path,xbmc.addon.image)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),3)">Skin.SetAddon(HomeProgramTile8.Path,xbmc.addon.executable)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),4)">Skin.SetFile(HomeProgramTile8.Path,.xsp|.m3u,special://userdata/playlists/video/)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),5)">Skin.SetFile(HomeProgramTile8.Path,.xsp|.m3u,special://userdata/playlists/music/)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),6)">RunScript(script.favourites,property=HomeProgramTile8)</onclick>
+            <onclick condition="stringcompare(Skin.String(HomeProgramTile8.Type),7)">Skin.SetString(HomeProgramTile8.Path)</onclick>
+        </control>
+    </include>
+    
+    
+    
     <include name="PanelDialogHome">
         <control type="group">
             <visible>!Window.IsVisible(yesnodialog)</visible>
@@ -3631,6 +4298,54 @@
                             <onclick>Skin.ToggleSetting(HomeProgramTile4)</onclick>
                             <property name="on">$VAR[HomeProgramTile4]</property>
                         </item>
+                        <item id="11">
+                            <label>$LOCALIZE[41159] 5</label>
+                            <onclick>Skin.SetString(HomeProgramTile5.Type,0)</onclick>
+                            <onclick>Skin.SetString(HomeProgramTile5.TypeName,$LOCALIZE[41145])</onclick>
+                            <onclick>Skin.Reset(HomeProgramTile5.Label)</onclick>
+                            <onclick>Skin.Reset(HomeProgramTile5.Icon)</onclick>
+                            <onclick>Skin.Reset(HomeProgramTile5.DimIcon)</onclick>
+                            <onclick>Skin.Reset(HomeProgramTile5.ShowLabel)</onclick>
+                            <onclick>Skin.Reset(HomeProgramTile5.Path)</onclick>
+                            <onclick>Skin.ToggleSetting(HomeProgramTile5)</onclick>
+                            <property name="on">$VAR[HomeProgramTile5]</property>
+                        </item>
+                        <item id="12">
+                            <label>$LOCALIZE[41159] 6</label>
+                            <onclick>Skin.SetString(HomeProgramTile6.Type,0)</onclick>
+                            <onclick>Skin.SetString(HomeProgramTile6.TypeName,$LOCALIZE[41145])</onclick>
+                            <onclick>Skin.Reset(HomeProgramTile6.Label)</onclick>
+                            <onclick>Skin.Reset(HomeProgramTile6.Icon)</onclick>
+                            <onclick>Skin.Reset(HomeProgramTile6.DimIcon)</onclick>
+                            <onclick>Skin.Reset(HomeProgramTile6.ShowLabel)</onclick>
+                            <onclick>Skin.Reset(HomeProgramTile6.Path)</onclick>
+                            <onclick>Skin.ToggleSetting(HomeProgramTile6)</onclick>
+                            <property name="on">$VAR[HomeProgramTile6]</property>
+                        </item>
+                        <item id="13">
+                            <label>$LOCALIZE[41159] 7</label>
+                            <onclick>Skin.SetString(HomeProgramTile7.Type,0)</onclick>
+                            <onclick>Skin.SetString(HomeProgramTile7.TypeName,$LOCALIZE[41145])</onclick>
+                            <onclick>Skin.Reset(HomeProgramTile7.Label)</onclick>
+                            <onclick>Skin.Reset(HomeProgramTile7.Icon)</onclick>
+                            <onclick>Skin.Reset(HomeProgramTile7.DimIcon)</onclick>
+                            <onclick>Skin.Reset(HomeProgramTile7.ShowLabel)</onclick>
+                            <onclick>Skin.Reset(HomeProgramTile7.Path)</onclick>
+                            <onclick>Skin.ToggleSetting(HomeProgramTile7)</onclick>
+                            <property name="on">$VAR[HomeProgramTile7]</property>
+                        </item>
+                        <item id="14">
+                            <label>$LOCALIZE[41159] 8</label>
+                            <onclick>Skin.SetString(HomeProgramTile8.Type,0)</onclick>
+                            <onclick>Skin.SetString(HomeProgramTile8.TypeName,$LOCALIZE[41145])</onclick>
+                            <onclick>Skin.Reset(HomeProgramTile8.Label)</onclick>
+                            <onclick>Skin.Reset(HomeProgramTile8.Icon)</onclick>
+                            <onclick>Skin.Reset(HomeProgramTile8.DimIcon)</onclick>
+                            <onclick>Skin.Reset(HomeProgramTile8.ShowLabel)</onclick>
+                            <onclick>Skin.Reset(HomeProgramTile8.Path)</onclick>
+                            <onclick>Skin.ToggleSetting(HomeProgramTile8)</onclick>
+                            <property name="on">$VAR[HomeProgramTile8]</property>
+                        </item>
                     </content>
                 </control>
                 
@@ -3693,6 +4408,30 @@
                     <posy>356</posy>
                     <visible>Container(3).HasFocus(10) + Skin.HasSetting(HomeProgramTile4)</visible>
                     <include>PanelDialogHomeNewProgramTile4</include>
+                </control>
+                <control type="group">
+                    <posx>559</posx>
+                    <posy>356</posy>
+                    <visible>Container(3).HasFocus(11) + Skin.HasSetting(HomeProgramTile5)</visible>
+                    <include>PanelDialogHomeNewProgramTile5</include>
+                </control>
+                <control type="group">
+                    <posx>559</posx>
+                    <posy>356</posy>
+                    <visible>Container(3).HasFocus(12) + Skin.HasSetting(HomeProgramTile6)</visible>
+                    <include>PanelDialogHomeNewProgramTile6</include>
+                </control>
+                <control type="group">
+                    <posx>559</posx>
+                    <posy>356</posy>
+                    <visible>Container(3).HasFocus(13) + Skin.HasSetting(HomeProgramTile7)</visible>
+                    <include>PanelDialogHomeNewProgramTile7</include>
+                </control>
+                <control type="group">
+                    <posx>559</posx>
+                    <posy>356</posy>
+                    <visible>Container(3).HasFocus(14) + Skin.HasSetting(HomeProgramTile8)</visible>
+                    <include>PanelDialogHomeNewProgramTile8</include>
                 </control>
                 
                 <control type="group">
@@ -3772,6 +4511,10 @@
                     <include condition="StringCompare(Window.Property(SingleDialog),eight)">PanelDialogHomeNewProgramTile2</include>
                     <include condition="StringCompare(Window.Property(SingleDialog),nine)">PanelDialogHomeNewProgramTile3</include>
                     <include condition="StringCompare(Window.Property(SingleDialog),ten)">PanelDialogHomeNewProgramTile4</include>
+                    <include condition="StringCompare(Window.Property(SingleDialog),eleven)">PanelDialogHomeNewProgramTile5</include>
+                    <include condition="StringCompare(Window.Property(SingleDialog),twelve)">PanelDialogHomeNewProgramTile6</include>
+                    <include condition="StringCompare(Window.Property(SingleDialog),thirteen)">PanelDialogHomeNewProgramTile7</include>
+                    <include condition="StringCompare(Window.Property(SingleDialog),fourteen)">PanelDialogHomeNewProgramTile8</include>
                 </control> 
                 
                 <control type="group">

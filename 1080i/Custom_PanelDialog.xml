@@ -11,6 +11,10 @@
     <onunload condition="Skin.HasSetting(HomeProgramTile2) + !IsEmpty(Window(3003).Property(SingleDialog)) + IsEmpty(Skin.String(HomeProgramTile2.Path))">Skin.ToggleSetting(HomeProgramTile2)</onunload>
     <onunload condition="Skin.HasSetting(HomeProgramTile3) + !IsEmpty(Window(3003).Property(SingleDialog)) + IsEmpty(Skin.String(HomeProgramTile3.Path))">Skin.ToggleSetting(HomeProgramTile3)</onunload>
     <onunload condition="Skin.HasSetting(HomeProgramTile4) + !IsEmpty(Window(3003).Property(SingleDialog)) + IsEmpty(Skin.String(HomeProgramTile4.Path))">Skin.ToggleSetting(HomeProgramTile4)</onunload>
+    <onunload condition="Skin.HasSetting(HomeProgramTile5) + !IsEmpty(Window(3003).Property(SingleDialog)) + IsEmpty(Skin.String(HomeProgramTile5.Path))">Skin.ToggleSetting(HomeProgramTile5)</onunload>
+    <onunload condition="Skin.HasSetting(HomeProgramTile6) + !IsEmpty(Window(3003).Property(SingleDialog)) + IsEmpty(Skin.String(HomeProgramTile6.Path))">Skin.ToggleSetting(HomeProgramTile6)</onunload>
+    <onunload condition="Skin.HasSetting(HomeProgramTile7) + !IsEmpty(Window(3003).Property(SingleDialog)) + IsEmpty(Skin.String(HomeProgramTile7.Path))">Skin.ToggleSetting(HomeProgramTile7)</onunload>
+    <onunload condition="Skin.HasSetting(HomeProgramTile8) + !IsEmpty(Window(3003).Property(SingleDialog)) + IsEmpty(Skin.String(HomeProgramTile8.Path))">Skin.ToggleSetting(HomeProgramTile8)</onunload>
     <onunload condition="!IsEmpty(Window(3003).Property(SingleDialog))">ClearProperty(SingleDialog,3003)</onunload>
     <onunload condition="!IsEmpty(Window(3003).Property(CustomDialog))">ClearProperty(CustomDialog,3003)</onunload>
     <controls>
