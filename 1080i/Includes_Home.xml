@@ -151,7 +151,7 @@
         <value condition="IsEmpty(Skin.String(HomePicturesMultiImage))">$INFO[Skin.String(GlobalBackdropMulti)]</value>
         <value>$INFO[Skin.String(HomePicturesMultiImage)]</value>
     </variable>
- 
+    
     <include name="HomeProfileInfo">
         <control type="group">
             <visible>!Window.IsActive(favourites) + !Window.IsActive(script-globalsearch-main.xml) + !Window.IsActive(script-globalsearch-infodialog.xml) + !Window.IsActive(script-globalsearch-contextmenu.xml) + ![Window.IsVisible(virtualkeyboard) + !IsEmpty(Window.Property(HomeSearch))] + !Skin.HasSetting(HideHomeProfileInfo)</visible>
@@ -3183,8 +3183,11 @@
                         <height>150</height>
                         <texture>windows/home/item-shadow.png</texture>
                     </control>
+                  
+                  <!-- Featured albums-->
                     <control type="group" id="402">
                         <description>Featured albums</description>
+                        <visible>!Player.HasAudio</visible>
                         <posx>289</posx>
                         <control type="button" id="4021">
                             <onfocus>CancelAlarm(HomeTileMove,true)</onfocus>
@@ -3420,6 +3423,122 @@
                             </control>
                         </control>
                     </control>
+                 
+                  <!-- Now playing album-->
+                    <control type="group" id="402">
+                        <description>Now playing info</description>
+                        <visible>Player.HasAudio</visible>
+                        <posx>289</posx>
+                        <control type="button" id="4021">
+                            <onfocus>CancelAlarm(HomeTileMove,true)</onfocus>
+                            <onup>AlarmClock(HomeTileMove,Control.Move(4022,1),00:07,silent,loop)</onup>
+                            <onup>425</onup>
+                            <ondown>80</ondown>
+                            <onleft>AlarmClock(HomeTileMove,Control.Move(4022,1),00:07,silent,loop)</onleft>
+                            <onleft>401</onleft>
+                            <onright>AlarmClock(HomeTileMove,Control.Move(4022,1),00:07,silent,loop)</onright>
+                            <onright>403</onright>
+                            <onclick>ActivateWindow(musicplaylist)</onclick>
+                        </control>
+                        <control type="label">
+                            <posx>0</posx>
+                            <posy>574</posy>
+                            <width>477</width>
+                            <height>25</height>
+                            <font>Font-Condensed-S20-B</font>
+                            <shadowcolor>11000000</shadowcolor>
+                            <textcolor>77white</textcolor>
+                            <align>left</align>
+                            <aligny>center</aligny>
+                            <textoffsetx>5</textoffsetx>
+                            <label>[UPPERCASE]$LOCALIZE[41443][/UPPERCASE]</label>
+                            <animation effect="slide" end="0,6" time="100" tween="sine" easing="out" condition="ControlGroup(402).HasFocus">Conditional</animation>
+                        </control>
+                        <control type="image">
+                            <posx>-5</posx>
+                            <posy>-5</posy>
+                            <width>487</width>
+                            <height>487</height>
+                            <texture border="7">windows/home/tile.png</texture>
+                            <visible>!Skin.HasSetting(BackgroundOpacity)</visible>
+                        </control>
+                        <control type="image">
+                            <posx>-5</posx>
+                            <posy>-5</posy>
+                            <width>487</width>
+                            <height>487</height>
+                            <texture border="7">windows/home/tile2.png</texture>
+                            <visible>Skin.HasSetting(BackgroundOpacity)</visible>
+                        </control>
+                        <control type="image">
+                           <posx>0</posx>
+                           <posy>0</posy>
+                           <width>477</width>
+                           <height>477</height>
+                           <aspectratio>scale</aspectratio>
+                           <texture background="true" fallback="views/fallbacks/DefaultAlbumCover.png/square-large.png">$INFO[Player.Art(thumb)]</texture>
+                        </control>
+                        <control type="group">
+                            <posx>0</posx>
+                            <posy>483</posy>
+                            <control type="image">
+                                <posx>-5</posx>
+                                <posy>-5</posy>
+                                <width>487</width>
+                                <height>99</height>
+                                <texture border="7">windows/home/tile.png</texture>
+                                <visible>!Skin.HasSetting(BackgroundOpacity)</visible>
+                            </control>
+                            <control type="image">
+                                <posx>-5</posx>
+                                <posy>-5</posy>
+                                <width>487</width>
+                                <height>99</height>
+                                <texture border="7">windows/home/tile2.png</texture>
+                                <visible>Skin.HasSetting(BackgroundOpacity)</visible>
+                            </control>
+                            <control type="label">
+                                <posx>20</posx>
+                                <posy>-6</posy>
+                                <height>66</height>
+                                <width>440</width>
+                                <font>Font-Condensed-S30-B</font>
+                                <align>left</align>
+                                <aligny>center</aligny>
+                                <textcolor>bbwhite</textcolor>
+                                <label>$INFO[MusicPlayer.Album]$INFO[MusicPlayer.Year, • ,]</label>
+                                <scroll>false</scroll>
+                                <visible>!ControlGroup(402).HasFocus</visible>
+                            </control>
+                            <control type="label">
+                                <posx>20</posx>
+                                <posy>-6</posy>
+                                <height>66</height>
+                                <width>440</width>
+                                <font>Font-Condensed-S30-B</font>
+                                <align>left</align>
+                                <aligny>center</aligny>
+                                <textcolor>bbwhite</textcolor>
+                                <label>$INFO[MusicPlayer.Album]$INFO[MusicPlayer.Year, • ,]</label>
+                                <scroll>true</scroll>
+                                <visible>ControlGroup(402).HasFocus</visible>
+                            </control>
+                            <control type="label">
+                                <posx>20</posx>
+                                <posy>28</posy>
+                                <height>66</height>
+                                <width>440</width>
+                                <font>Font-Condensed-S30</font>
+                                <align>left</align>
+                                <aligny>center</aligny>
+                                <textcolor>99FFFFFF</textcolor>
+                                <label>$INFO[MusicPlayer.Artist]</label>
+                                <scroll>false</scroll>
+                            </control>
+
+                        </control>
+                    </control>                    
+               
                     <control type="panel" id="401">
                         <posx>-24</posx>
                         <posy>-24</posy>
