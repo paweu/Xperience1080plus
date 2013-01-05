@@ -111,6 +111,14 @@
             <include>Animation_FanartFade</include>
             <visible>!IsEmpty(Window(Home).property(fanart_image)) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo]</visible>
         </control>
+        <control type="image">
+            <description>Music npl fanart</description>
+            <include>FullscreenDimensions</include>
+            <texture background="true">$INFO[Player.Art(fanart)]</texture>
+            <fadetime>500</fadetime>
+            <include>Animation_FanartFade</include>
+            <visible>ControlGroup(402).HasFocus + Player.HasAudio</visible>
+        </control>
     </include>
 
 <!-- ============== -->
