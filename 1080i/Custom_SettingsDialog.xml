@@ -82,10 +82,10 @@
                 </control>
             </control>
             
-          <!-- custom home tiles color -->
+          <!-- custom home tiles colors-->
             <control type="grouplist" id="3">
                 <include>SettingsDialogGrouplistVars</include>
-                <visible>stringcompare(Window(skinsettings).property(Dialog),Manage custom home tiles color)</visible>
+                <visible>stringcompare(Window(skinsettings).property(Dialog),Home tiles colors)</visible>
                 <control type="radiobutton" id="2201">
                     <width>1210</width>
                     <include>SettingsDialogRadioButtonVars</include>
@@ -121,6 +121,40 @@
                     <label>Set custom Weather tiles orange</label>
                     <enable>!Skin.HasSetting(HomeWeather)</enable>
                     <animation effect="fade" start="100" end="42" time="0" condition="!Control.IsEnabled(2204)">Conditional</animation>
+                </control>
+            </control>
+            
+          <!-- custom home items extras -->
+            <control type="grouplist" id="3">
+                <include>SettingsDialogGrouplistVars</include>
+                <visible>stringcompare(Window(skinsettings).property(Dialog),Home items extras)</visible>
+                <control type="radiobutton" id="2301">
+                    <width>1210</width>
+                    <include>SettingsDialogRadioButtonVars</include>
+                    <selected>Skin.HasSetting(HideHomeSpotlight)</selected>
+                    <onclick>Skin.ToggleSetting(HideHomeSpotlight)</onclick>
+                    <label>Show New movies instead of Spotlight</label>
+                    <enable>!Skin.HasSetting(HomeHome)</enable>
+                    <animation effect="fade" start="100" end="42" time="0" condition="!Control.IsEnabled(2301)">Conditional</animation>
+                </control>
+                <control type="radiobutton" id="2302">
+                    <width>1210</width>
+                    <include>SettingsDialogRadioButtonVars</include>
+                    <selected>Skin.HasSetting(HideHomeOngoing)</selected>
+                    <onclick>Skin.ToggleSetting(HideHomeOngoing)</onclick>
+                    <label>Show New shows instead of Ongoing</label>
+                    <enable>!Skin.HasSetting(HomeHome)</enable>
+                    <animation effect="fade" start="100" end="42" time="0" condition="!Control.IsEnabled(2302)">Conditional</animation>
+                </control>
+                <control type="radiobutton" id="2303">
+                    <width>1210</width>
+                    <include>SettingsDialogRadioButtonVars</include>
+                    <selected>Skin.HasSetting(HideHomeMusicAddons)</selected>
+                    <onclick>Skin.ToggleSetting(HideHomeMusicAddons)</onclick>
+                    <label>Show Recently played instead of Music Add-ons</label>
+                    <scroll>true</scroll>
+                    <enable>!Skin.HasSetting(HomeMusic)</enable>
+                    <animation effect="fade" start="100" end="42" time="0" condition="!Control.IsEnabled(2303)">Conditional</animation>
                 </control>
             </control>            
             
