@@ -339,9 +339,9 @@
                     <texturefocus border="150,3,150,3">windows/settings/images/right-focus-arrow-fo.png</texturefocus>
                     <texturenofocus border="150,3,150,3">windows/settings/images/right-focus-arrow-nf.png</texturenofocus>
                     <include>SettingsCategoryDefaultButtonVars</include>
-                    <onclick>SetProperty(Dialog,Home tiles colors)</onclick>
+                    <onclick>SetProperty(Dialog,Home items colors)</onclick>
                     <onclick>ActivateWindow(3001)</onclick>
-                    <label>Manage custom home tiles colors</label>
+                    <label>Manage custom home items colors</label>
                 </control>
                 <control type="button" id="2003">
                     <width>1210</width>

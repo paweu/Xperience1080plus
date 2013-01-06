@@ -82,10 +82,10 @@
                 </control>
             </control>
             
-          <!-- custom home tiles colors-->
+          <!-- custom home items colors-->
             <control type="grouplist" id="3">
                 <include>SettingsDialogGrouplistVars</include>
-                <visible>stringcompare(Window(skinsettings).property(Dialog),Home tiles colors)</visible>
+                <visible>stringcompare(Window(skinsettings).property(Dialog),Home items colors)</visible>
                 <control type="radiobutton" id="2201">
                     <width>1210</width>
                     <include>SettingsDialogRadioButtonVars</include>
@@ -152,7 +152,6 @@
                     <selected>Skin.HasSetting(HideHomeMusicAddons)</selected>
                     <onclick>Skin.ToggleSetting(HideHomeMusicAddons)</onclick>
                     <label>Show Recently played instead of Music Add-ons</label>
-                    <scroll>true</scroll>
                     <enable>!Skin.HasSetting(HomeMusic)</enable>
                     <animation effect="fade" start="100" end="42" time="0" condition="!Control.IsEnabled(2303)">Conditional</animation>
                 </control>
