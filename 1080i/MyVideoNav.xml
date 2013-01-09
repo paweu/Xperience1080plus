@@ -85,24 +85,187 @@
                         <texturenofocus>dialogs/options/buttons/tvguide-nf.png</texturenofocus>
                         <visible>[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + System.HasAddon(script.tv.show.next.aired)</visible>
                     </control>
-                    <control type="button" id="22">
-                        <description>Label</description>
-                        <include>optionsbuttonsdimensions</include>
-                        <label>42025</label>
-                        <onclick>XBMC.RunScript(script.artwork.downloader, mediatype=tvshow)</onclick>
-                        <texturefocus>dialogs/options/buttons/refresh-fo.png</texturefocus>
-                        <texturenofocus>dialogs/options/buttons/refresh-nf.png</texturenofocus>
-                        <visible>Container.Content(TVShows) + System.HasAddon(script.artwork.downloader)</visible>
+                    
+                    <!-- update art menu for artwork downloader-->
+                    <control type="group" id="30">
+                       <height>57</height>
+                       <defaultcontrol always="true">300</defaultcontrol>
+                       <visible>System.HasAddon(script.artwork.downloader) + [Container.Content(Movies) | Container.Content(TVShows)]</visible>
+
+                       <!-- TVshows-->
+                       <control type="button" id="300">
+                           <description>Update show art</description>
+                           <width>404</width>
+                           <height>57</height>
+                           <font>-</font>
+                           <label>-</label>
+                           <onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
+                           <onleft>300</onleft>
+                           <onright>301</onright>
+                           <onup>98</onup>
+                           <ondown>3</ondown>
+                           <texturefocus>dialogs/options/buttons/refresh-fo.png</texturefocus>
+                           <texturenofocus>dialogs/options/buttons/refresh-nf.png</texturenofocus>
+                           <visible>Container.Content(TVShows)</visible>
+                       </control>
+                       <control type="button" id="301">
+                           <description>Update show extrafanart</description>
+                           <width>404</width>
+                           <height>57</height>
+                           <font>-</font>
+                           <label>-</label>
+                           <onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=tvshow, dbid=$INFO[ListItem.DBID], extrafanart)</onclick>
+                           <onleft>300</onleft>
+                           <onright>302</onright>
+                           <onup>98</onup>
+                           <ondown>3</ondown>
+                           <texturefocus>dialogs/options/buttons/refresh-fo.png</texturefocus>
+                           <visible>Container.Content(TVShows) + Skin.HasSetting(ExtraFanart.Enabled)</visible>
+                       </control>
+                       <control type="button" id="302">
+                           <description>Update all shows</description>
+                           <width>404</width>
+                           <height>57</height>
+                           <font>-</font>
+                           <label>-</label>
+                           <onclick>XBMC.RunScript(script.artwork.downloader, mediatype=tvshow])</onclick>
+                           <onleft>301</onleft>
+                           <onright>302</onright>
+                           <onup>98</onup>
+                           <ondown>3</ondown>
+                           <texturefocus>dialogs/options/buttons/refresh-fo.png</texturefocus>
+                           <visible>Container.Content(TVShows)</visible>
+                       </control>
+
+                       <!--movies-->
+                       <control type="button" id="303">
+                           <description>Update movie art</description>
+                           <width>404</width>
+                           <height>57</height>
+                           <font>-</font>
+                           <label>-</label>
+                           <onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=movie, dbid=$INFO[ListItem.DBID])</onclick>
+                           <onleft>303</onleft>
+                           <onright>304</onright>
+                           <onup>98</onup>
+                           <ondown>3</ondown>
+                           <texturefocus>dialogs/options/buttons/refresh-fo.png</texturefocus>
+                           <texturenofocus>dialogs/options/buttons/refresh-nf.png</texturenofocus>
+                           <visible>Container.Content(Movies)</visible>
+                       </control>
+                       <control type="button" id="304">
+                           <description>Update movie extrafanart</description>
+                           <width>404</width>
+                           <height>57</height>
+                           <font>-</font>
+                           <label>-</label>
+                           <onclick>XBMC.RunScript(script.artwork.downloader, mode=custom, mediatype=movie, dbid=$INFO[ListItem.DBID], extrafanart)</onclick>
+                           <onleft>303</onleft>
+                           <onright>305</onright>
+                           <onup>98</onup>
+                           <ondown>3</ondown>
+                           <texturefocus>dialogs/options/buttons/refresh-fo.png</texturefocus>
+                           <visible>Container.Content(Movies) + Skin.HasSetting(ExtraFanart.Enabled)</visible>
+                       </control>
+                       <control type="button" id="305">
+                           <description>Update all movies</description>
+                           <width>404</width>
+                           <height>57</height>
+                           <font>-</font>
+                           <label>-</label>
+                           <onclick>XBMC.RunScript(script.artwork.downloader, mediatype=movie</onclick>
+                           <onleft>304</onleft>
+                           <onright>305</onright>
+                           <onup>98</onup>
+                           <ondown>3</ondown>
+                           <texturefocus>dialogs/options/buttons/refresh-fo.png</texturefocus>
+                           <visible>Container.Content(Movies)</visible>
+                       </control>
+                       
+                       <!-- Arrows -->
+                       <control type="image">
+                           <posx>0</posx>
+                           <posy>14</posy>
+                           <width>30</width>
+                           <height>30</height>
+                           <texture>dialogs/shutdown/left.png</texture>
+                           <animation type="Conditional" condition="ControlGroup(30).HasFocus()" pulse="true">
+                               <effect type="fade" start="0" end="80" time="700" tween="sine" easing="inout" />
+                               <effect type="slide" start="-35" end="-30" tween="sine" easing="inout" time="700" />
+                           </animation>
+                           <visible>ControlGroup(30).HasFocus()</visible>
+                       </control>
+                       <control type="image">
+                           <posx>370</posx>
+                           <posy>14</posy>
+                           <width>30</width>
+                           <height>30</height>
+                           <texture>dialogs/shutdown/right.png</texture>
+                           <animation type="Conditional" condition="ControlGroup(30).HasFocus()" pulse="true">
+                               <effect type="fade" start="0" end="80" time="700" tween="sine" easing="inout" />
+                               <effect type="slide" start="40" end="35" tween="sine" easing="inout" time="700" />
+                           </animation>
+                           <visible>ControlGroup(30).HasFocus()</visible>
+                       </control>
+                    
+                       <!-- Labels for update buttons -->
+                       <control type="label">
+                           <posx>75</posx>
+                           <width>300</width>
+                           <height>57</height>
+                           <label>Update art</label>
+                           <textcolor>DDFFFFFF</textcolor>
+                           <font>Font-Condensed-S34</font>
+                           <align>left</align>
+                           <scroll>true</scroll>
+                           <visible>Control.HasFocus(300) | Control.HasFocus(303)</visible>
+                       </control>
+                       <control type="label">
+                           <posx>75</posx>
+                           <width>300</width>
+                           <height>57</height>
+                           <label>Update extrafanart</label>
+                           <textcolor>DDFFFFFF</textcolor>
+                           <font>Font-Condensed-S34</font>
+                           <align>left</align>
+                           <scroll>true</scroll>
+                           <visible>Control.HasFocus(301) | Control.HasFocus(304)</visible>
+                       </control>
+                       <control type="label">
+                           <posx>75</posx>
+                           <width>300</width>
+                           <height>57</height>
+                           <label>Update all movies</label>
+                           <textcolor>DDFFFFFF</textcolor>
+                           <font>Font-Condensed-S34</font>
+                           <align>left</align>
+                           <scroll>true</scroll>
+                           <visible>Control.HasFocus(305)</visible>
+                       </control>
+                       <control type="label">
+                           <posx>75</posx>
+                           <width>300</width>
+                           <height>57</height>
+                           <label>Update all shows</label>
+                           <textcolor>DDFFFFFF</textcolor>
+                           <font>Font-Condensed-S34</font>
+                           <align>left</align>
+                           <scroll>true</scroll>
+                           <visible>Control.HasFocus(302)</visible>
+                       </control>
+                       <control type="label">
+                           <posx>75</posx>
+                           <width>300</width>
+                           <height>57</height>
+                           <label>Update art...</label>
+                           <textcolor>FF484848</textcolor>
+                           <font>Font-Condensed-S34</font>
+                           <align>left</align>
+                           <scroll>true</scroll>
+                           <visible>!Control.HasFocus(300) + !Control.HasFocus(301) + !Control.HasFocus(302) + !Control.HasFocus(303) + !Control.HasFocus(304) + !Control.HasFocus(305)</visible>
+                       </control>
                     </control>
-                    <control type="button" id="23">
-                        <description>Label</description>
-                        <include>optionsbuttonsdimensions</include>
-                        <label>42025</label>
-                        <onclick>XBMC.RunScript(script.artwork.downloader, mediatype=movie)</onclick>
-                        <texturefocus>dialogs/options/buttons/refresh-fo.png</texturefocus>
-                        <texturenofocus>dialogs/options/buttons/refresh-nf.png</texturenofocus>
-                        <visible>Container.Content(Movies) + System.HasAddon(script.artwork.downloader)</visible>
-                    </control>
+                
                     <control type="button" id="3">
                         <description>sort</description>
                         <include>optionsbuttonsdimensions</include>
@@ -194,6 +357,7 @@
                         <animation effect="fade" start="100" end="50" time="0" condition="!Control.IsEnabled(17)">Conditional</animation>
                     </control>
                 </control>
+                
                 <control type="grouplist" id="9222">
                     <description>View Specific Controls</description>
                     <posx>19</posx>

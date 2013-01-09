@@ -848,8 +848,15 @@
                 <control type="button" id="7013">
                     <width>1210</width>
                     <include>SettingsCategoryDefaultButtonVars</include>
-                    <onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,extrafanart)</onclick>
-                    <label> • $LOCALIZE[41288]</label>
+                    <onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=movie,extrafanart)</onclick>
+                    <label> • Download extra fanarts for Movies</label>
+                    <visible>Skin.HasSetting(ExtraFanart.Enabled)</visible>
+                </control>
+                <control type="button" id="7014">
+                    <width>1210</width>
+                    <include>SettingsCategoryDefaultButtonVars</include>
+                    <onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,extrafanart)</onclick>
+                    <label> • Download extra fanarts for TVshows</label>
                     <visible>Skin.HasSetting(ExtraFanart.Enabled)</visible>
                 </control>
             </control>
