@@ -194,6 +194,7 @@
                 <visible>!Control.HasFocus(1110) + !Control.HasFocus(50)</visible>
             </control>
             
+            <!-- Plot / Cast Labels -->
             <control type="grouplist">
                 <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
                 <animation type="Conditional" condition="Control.HasFocus(1110)">
@@ -205,6 +206,7 @@
                 <height>60</height>
                 <orientation>horizontal</orientation>
                 <itemgap>20</itemgap>
+                
                 <!-- Plot Label -->
                 <control type="label">
                     <posx>118</posx>
@@ -218,6 +220,7 @@
                     <scroll>false</scroll>
                     <animation effect="fade" start="100" end="50" time="200" tween="sine" easing="inout" condition="Control.HasFocus(9334) | Control.HasFocus(50) | Control.HasFocus(1110)">Conditional</animation>
                 </control>
+               
                 <!-- Cast Label -->
                 <control type="label">
                     <posx>118</posx>
@@ -229,14 +232,14 @@
                     <textcolor>eewhite</textcolor>
                     <align>left</align>
                     <scroll>false</scroll>  
-                    <animation effect="fade" start="100" end="50" time="200" tween="sine" easing="inout" condition="Control.HasFocus(9333) | Control.HasFocus(9335) | Control.HasFocus(1101) | Control.HasFocus(1104) | Control.HasFocus(1105) | Control.HasFocus(1110)">Conditional</animation>
+                    <animation effect="fade" start="100" end="50" time="200" tween="sine" easing="inout" condition="Control.HasFocus(9333) | Control.HasFocus(71) | Control.HasFocus(9335) | Control.HasFocus(1101) | Control.HasFocus(1104) | Control.HasFocus(1105) | Control.HasFocus(1110)">Conditional</animation>
                 </control>
             </control>
             
             <!-- Info Stuff -->
             <control type="group">
                 <include>FullscreenDimensions</include>
-                <visible allowhiddenfocus="true">Control.HasFocus(9333) | Control.HasFocus(9335) | Control.HasFocus(1101) | Control.HasFocus(1104) | Control.HasFocus(1105) | Control.HasFocus(1110)</visible>
+                <visible allowhiddenfocus="true">Control.HasFocus(71) | Control.HasFocus(9333) | Control.HasFocus(9335) | Control.HasFocus(1101) | Control.HasFocus(1104) | Control.HasFocus(1105) | Control.HasFocus(1110)</visible>
                 <include>listEndAnimation</include>
                 <animation type="Visible">
                     <effect type="slide" start="-1920" end="0" time="600" delay="0" tween="sine" easing="inout" />
@@ -414,14 +417,14 @@
                     </control>
                 </control>
                 
+                <!-- Panel menu-->
                 <control type="list" id="9333">
                     <posx>100</posx>
                     <posy>576</posy>
                     <width>634</width>
                     <height>332</height>
                     <onleft>1110</onleft>
-                    <onright>SendClick(2003,5)</onright>
-                    <onright>SetFocus(9334)</onright>
+                    <onright>71</onright>
                     <onup condition="!Player.HasVideo">9333</onup>
                     <onup condition="Player.HasVideo">9336</onup>
                     <ondown condition="!Player.HasVideo">9333</ondown>
@@ -754,9 +757,22 @@
                         <textcolor>bbwhite</textcolor>
                         <align>justify</align>
                         <font>Font-Condensed-S40</font>
-                        <scroll>false</scroll>
-                        <scrollout>false</scrollout>
-                        <autoscroll time="2000" delay="10000" repeat="10000" />
+                        <pagecontrol>71</pagecontrol>
+                    </control>
+                    <control type="scrollbar" id="71">
+                       <description>Scrollbar</description>
+                       <posx>1070</posx>
+                       <posy>10</posy>
+                       <width>6</width>
+                       <height>270</height>                    
+                       <onleft>9333</onleft>
+                       <onright>SendClick(2003,5)</onright>
+                       <onright>SetFocus(9334)</onright>
+                       <texturesliderbar border="1">views/other/scrollbar-sq.png</texturesliderbar>
+                       <texturesliderbarfocus border="1">views/other/scrollbar-sq.png</texturesliderbarfocus>
+                       <orientation>vertical</orientation>
+                       <showonepage>false</showonepage>
+                       <animation effect="fade" start="35" end="0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(71)">Conditional</animation>
                     </control>
                 </control>          
             </control>
@@ -845,6 +861,7 @@
                 
             </control>
             
+            <!-- Poster -->
             <control type="group">
                 <visible>Control.HasFocus(1110)</visible>
                 <animation type="Visible">
