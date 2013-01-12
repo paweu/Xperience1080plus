@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <strings>   
     <!-- Custom_Settings.xml -->
     <!-- From 41100 to 41299 -->
@@ -7,10 +7,10 @@
     <string id="41100">General</string>
 	<string id="41101">Activar modo kiosko</string>
     <string id="41102">Mostrar video reproducido en fondo</string>
-    <string id="41103">Mostrar artist slideshow en la visualización de la música</string>
+    <string id="41103">Mostrar artist slideshow en la visualizaciÃ³n de la mÃºsica</string>
     <string id="41104">Seleccionar carpeta</string>
     <string id="41105">Efecto animado de artist slideshow</string>
-    <string id="41106">Mostrar fanart detrás de la visualización</string>
+    <string id="41106">Mostrar fanart detrÃ¡s de la visualizaciÃ³n</string>
     <string id="41107">Activar CDArt</string>
     <string id="41112">Invertir el giro del control</string>
     <string id="41113">Zona alta</string>
@@ -18,9 +18,9 @@
     
     <!-- Home -->
     <string id="41130">Pantalla principal</string>
-    <string id="41131">Administrar categorías</string>
+    <string id="41131">Administrar categorÃ­as</string>
     <!-- 41132/41133 -->
-    <string id="41134">Ocultar imágen de perfil</string>
+    <string id="41134">Ocultar imÃ¡gen de perfil</string>
     <!-- 41135 -->
 	<string id="41136">Administrar elementos personalizados de la pantalla principal</string>
     <string id="41137">Personalizado</string>
@@ -29,18 +29,18 @@
     <string id="41140">Oscurecer icono</string>
     <string id="41141">Tipo</string>
     <string id="41142">Ruta</string>
-    <string id="41143">Resolución recomendada 633x437px</string>
+    <string id="41143">ResoluciÃ³n recomendada 633x437px</string>
     <string id="41144">Mostrar encima</string>
     <string id="41145">Add-on de video</string>
-    <string id="41146">Add-on de música</string>
-    <string id="41147">Add-on de imágenes</string>
+    <string id="41146">Add-on de mÃºsica</string>
+    <string id="41147">Add-on de imÃ¡genes</string>
     <string id="41148">Add-on de programas</string>
-    <string id="41149">Lista de reproducción de video</string>
-    <string id="41150">Lista de reproducción de música</string>
+    <string id="41149">Lista de reproducciÃ³n de video</string>
+    <string id="41150">Lista de reproducciÃ³n de mÃºsica</string>
     <string id="41151">Personalizado</string>
     <string id="41152">Music panel opens</string>
     <string id="41153">Favorito</string>
-    <string id="41154">Resolución recomendada 283x283px</string>
+    <string id="41154">ResoluciÃ³n recomendada 283x283px</string>
     <string id="41156">Mostrar nombre</string>
     <string id="41157">Cubrir Video</string>
     <string id="41158">Cubrir Series de TV</string>
@@ -50,49 +50,49 @@
     <!-- Views -->
     <string id="41190">Vistas</string>
     <string id="41191">Desactivar fanart</string>
-    <string id="41202">Ejecutar trailer al mirar la información de la película</string>
+    <string id="41202">Ejecutar trailer al mirar la informaciÃ³n de la pelÃ­cula</string>
     
 	<!-- General -->
 	<string id="41200">Ocultar boton de 'Apagar' (solo visible en inicio)</string>
-    <string id="41201">Ocultar botón de 'Opciones'</string>
+    <string id="41201">Ocultar botÃ³n de 'Opciones'</string>
 	
 	<!-- Live TV -->
     <string id="41220">TV en Vivo</string>
-    <string id="41221">Usar en el epg colores para los géneros</string>
+    <string id="41221">Usar en el epg colores para los gÃ©neros</string>
 	
 	<!-- OSD -->
-    <string id="41240">Activar display de música</string>
-    <string id="41241">Ocultar botón de apagado, clima &amp; reloj en osd de música (recomendado para TVs de plasma)</string>
-    <string id="41242">Ajuste el sitio predeterminado para el botón de subtítulos (osd de video)</string>
+    <string id="41240">Activar display de mÃºsica</string>
+    <string id="41241">Ocultar botÃ³n de apagado, clima &amp; reloj en osd de mÃºsica (recomendado para TVs de plasma)</string>
+    <string id="41242">Ajuste el sitio predeterminado para el botÃ³n de subtÃ­tulos (osd de video)</string>
     
     <!-- Backgrounds -->
     <string id="41250">Fondos</string>
     <string id="41251">Global</string>
-    <string id="41252">Imagen única</string>
-    <string id="41253">Imágenes múltiples</string>
+    <string id="41252">Imagen Ãºnica</string>
+    <string id="41253">ImÃ¡genes mÃºltiples</string>
 	
 	<!-- Guide -->
     <string id="41270">Ocultar reloj</string>
     <string id="41271">Ocultar imagen de perfil</string>
-    <string id="41272">Sustituir imagenes con elementos de menú personalizado en quick nav</string>
-    <string id="41273">Sustituir trailer con elementos de menú personalizado en quick nav</string>
-    <string id="41274">Sustituir nuevas películas con elementos de menú personalizado en quick nav</string>
-    <string id="41275">Sustituir nuevos espectáculos con elementos de menú personalizado en quick nav</string>
-    <string id="41276">Elija elemento de menú personalizado</string>
+    <string id="41272">Sustituir imagenes con elementos de menÃº personalizado en quick nav</string>
+    <string id="41273">Sustituir trailer con elementos de menÃº personalizado en quick nav</string>
+    <string id="41274">Sustituir nuevas pelÃ­culas con elementos de menÃº personalizado en quick nav</string>
+    <string id="41275">Sustituir nuevos espectÃ¡culos con elementos de menÃº personalizado en quick nav</string>
+    <string id="41276">Elija elemento de menÃº personalizado</string>
     
     <!-- Add-Ons -->
     <string id="41280">Add-ons</string>
-    <string id="41281">Add-on de subtítulos</string>
+    <string id="41281">Add-on de subtÃ­tulos</string>
     <string id="41282">Add-on de letras</string>
 	<string id="41283">Activar add-on TVTunes</string>
     <string id="41284">Descarga temas musicales</string>
     <string id="41285">Activar TV Show Next Aired</string>
     <string id="41287">Activar extra fanart</string>
-    <string id="41288">Descargar extra fanarts para películas &amp; series de tv</string>
+    <string id="41288">Descargar extra fanarts para pelÃ­culas &amp; series de tv</string>
     <string id="41289">Configurar Artwork Downloader</string>
     <string id="41290">Configurar TV Show Next Aired</string>
     <string id="41293">Actualizar datos next aired al iniciar</string>
-    <string id="41294">Actualizar arte (landscape, logo, clearart) después de actualizar la base de datos</string>
+    <string id="41294">Actualizar arte (landscape, logo, clearart) despuÃ©s de actualizar la base de datos</string>
     
     <!-- DialogAlbumInfo.XML & DialogVideoInfo.XML -->
     <!-- From 41300 to 41349 -->
@@ -100,7 +100,7 @@
     <string id="41301">Humor: </string>
     <string id="41302">Estrenado: </string>
     <string id="41303">Pistas</string>
-    <string id="41304">Discografía</string>
+    <string id="41304">DiscografÃ­a</string>
     <string id="41305">Obtener poster</string>
     <string id="41306">Obtener fanart</string>
     <string id="41307">Actualizar</string>
@@ -108,29 +108,29 @@
     <string id="41309">Escritor: </string>
     <string id="41310">Episodios vistos: </string>
     <string id="41311">Episodios no vistos: </string>
-    <string id="41312">Año: </string>
-    <string id="41313">Género: </string>
+    <string id="41312">AÃ±o: </string>
+    <string id="41313">GÃ©nero: </string>
     <string id="41314">Estrenado: </string>
     <string id="41315">Reproducir</string>
     <string id="41316">Reparto</string>
     <string id="41317">Trailer</string>
-    <string id="41318">Duración: </string>
-    <string id="41319">Sinópsis</string>
+    <string id="41318">DuraciÃ³n: </string>
+    <string id="41319">SinÃ³psis</string>
     <string id="41320">Parada</string>
     <string id="41321">Estrenado: </string>
     <string id="41322">Temporada</string>
     <string id="41323">Episodio</string>
-    <string id="41324">Biografía</string>
-    <string id="41325">Revisión</string>
+    <string id="41324">BiografÃ­a</string>
+    <string id="41325">CrÃ­tica</string>
 	<string id="41326">Obtener info</string>
-    <string id="41327">Año de estreno</string>
+    <string id="41327">AÃ±o de estreno</string>
     <string id="41333">Obtener tema</string>
     <string id="41813">Episodios</string>
         
     <!-- DialogButtonMenu.xml -->
     <!-- From 41350 to 41369 -->
     <string id="41350">Info del Sistema</string>
-    <string id="41351">Cerrar Sesión</string>
+    <string id="41351">Cerrar SesiÃ³n</string>
     <string id="41352">Salir de XBMC</string>
     <string id="41353">Explorador</string>
     <string id="41354">Reiniciar XBMC</string>
@@ -148,9 +148,9 @@
     <string id="41372">Pausado</string>
     <string id="41380">Director</string>
     <string id="41381">Auto</string>
-    <string id="41382">Duración</string>
+    <string id="41382">DuraciÃ³n</string>
     <string id="41383">Rating</string>
-    <string id="41384">Género</string>
+    <string id="41384">GÃ©nero</string>
     <string id="41385">Estudio</string>
     
     <!-- LoginScreen.xml -->
@@ -160,27 +160,27 @@
     <!-- Include_Guide-Interface.xml -->
     <!-- From 41440 to 41459 -->
     <string id="41440">Info del Sistema</string>
-    <string id="41441">Nav Rápida</string>
+    <string id="41441">Nav RÃ¡pida</string>
     <string id="41442">Actualizaciones</string>
     <string id="41443">Reproduciendo</string>
     <string id="41444">Opciones</string>
-    <string id="41445">Películas</string>
+    <string id="41445">PelÃ­culas</string>
     <string id="41446">Series TV</string>
-    <string id="41447">Música</string>
-    <string id="41448">Imágenes</string>
+    <string id="41447">MÃºsica</string>
+    <string id="41448">ImÃ¡genes</string>
     <string id="41449">Trailer</string>
-    <string id="41450">Películas nuevas</string>
+    <string id="41450">PelÃ­culas nuevas</string>
     <string id="41451">Series nuevas</string>
-    <string id="41452">Nada en reproducción</string>
+    <string id="41452">Nada en reproducciÃ³n</string>
     <string id="41453">Usuario</string>
-    <string id="41454">Dirección IP</string>
+    <string id="41454">DirecciÃ³n IP</string>
     <string id="41455">Memoria libre</string>
-    <string id="41456">Resolución</string>
+    <string id="41456">ResoluciÃ³n</string>
     <string id="41457">Sistema encendido</string>
-    <string id="41458">Versión de Skin</string>
-    <string id="41459">Versión de XBMC</string>
-	<string id="41460">Guía</string>
-    <string id="41920">Recientemente añadido</string>
+    <string id="41458">VersiÃ³n de Skin</string>
+    <string id="41459">VersiÃ³n de XBMC</string>
+	<string id="41460">GuÃ­a</string>
+    <string id="41920">Nuevo</string>
     
     <!-- Includes_Home.xml -->
     <!-- From 41500 to 41599 -->
@@ -190,11 +190,11 @@
     <string id="41525">buscar en XBMC</string>
     <string id="41550">Destacadas</string>
     <string id="41551">Series en curso</string>
-    <string id="41552">Películas nuevas</string>
+    <string id="41552">PelÃ­culas nuevas</string>
     <string id="41553">Series nuevas</string>
-    <string id="41554">Álbumes nuevos</string>
-    <string id="41555">Películas sin ver</string>
-    <string id="41556">Álbumes Destacados</string>
+    <string id="41554">Ãlbumes nuevos</string>
+    <string id="41555">PelÃ­culas sin ver</string>
+    <string id="41556">Ãlbumes Destacados</string>
     
     <!-- Includes_Window-Contents.xml -->
     <!-- From 41600 to 41619 -->
@@ -206,26 +206,26 @@
 
     <!-- MyWeather.xml -->
     <!-- From 41680 to 41699 --> 
-    <string id="41689">Locación</string>
+    <string id="41689">LocaciÃ³n</string>
     <string id="41690">Ocultar Fanart</string>
     <string id="41691">Establecer Ruta de Fanart</string>
 	<string id="41692">Ocultar fanart habitual</string>
 	
 	<!-- SmartPlaylistEditor.xml -->
     <!-- From 41716 to 41719 -->
-    <string id="41716">Opciones de lista de reproducción</string>
+    <string id="41716">Opciones de lista de reproducciÃ³n</string>
 	
 	<!-- Views -->
     <!-- From 41800 to 41899 -->
     <string id="41805">Emitido</string> 
-    <string id="41819">Página</string>
+    <string id="41819">PÃ¡gina</string>
     <string id="41817">Items</string>
     <string id="41822">Item</string>
 	
 	<!-- Include_Home-Submenu.xml -->
     <!-- From 41920 to 41999 -->
     <string id="41932">Addons de video</string>
-    <string id="41935">Addons de música</string>
+    <string id="41935">Addons de mÃºsica</string>
     <string id="41937">Addons de programa</string>
     <string id="41938">Ajustes del clima</string>
 	
@@ -240,31 +240,31 @@
     <string id="42010">Ver opciones</string>
     <string id="42014">Ocultar info</string>
     <string id="42017">Opciones principales</string>
-    <string id="42018">Mostrar trama</string>
+    <string id="42018">Mostrar argumento</string>
     <string id="42019">Usar posters</string>
     <string id="42021">Vista</string>
     <string id="42022">Usar landscape</string>
     <string id="42023">Usar clearart</string>
-    <string id="42024">Thumbs pequeños</string>
+    <string id="42024">Thumbs pequeÃ±os</string>
     <string id="42025">Actualizar arte</string>
     <string id="42026">Usar logo</string>
 	
 	<!-- Addons --> 
     <!-- From 42130 to 42139 -->    
-    <string id="42130">Categoría</string>
-    <string id="42131">Información</string>
-    <string id="42132">Sin descripción disponible</string>
+    <string id="42130">CategorÃ­a</string>
+    <string id="42131">InformaciÃ³n</string>
+    <string id="42132">DescripciÃ³n no disponible</string>
 	
 	<!-- TV Guide -->
     <!-- From 42160 to 42179 -->
-    <string id="42160">Guía de TV</string>
+    <string id="42160">GuÃ­a de TV</string>
     <!-- e.g. "08:00 PM on ABC" -->
     <string id="42162">encendido</string>
 	
 	<!-- PVR -->
     <!-- From 42180 to 42199 -->
     <string id="42180">Grupos disponibles</string>
-    <string id="42181">Añadir Grupo</string>
+    <string id="42181">AÃ±adir Grupo</string>
     <string id="42182">Renombrar Grupo</string>
     <string id="42183">Borrar Grupo</string>
     <string id="42184">Opciones del canal</string>
