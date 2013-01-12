@@ -2502,7 +2502,7 @@
                     <onright condition="!Skin.HasSetting(HomeMusic)">425</onright>
                     <onright condition="Skin.HasSetting(HomeMusic) + !Skin.HasSetting(HomePrograms)">625</onright>
                     <onright condition="Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomePrograms) + !Skin.HasSetting(HomeWeather)">725</onright>
-                    <onright condition="Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeWeather">825</onright>
+                    <onright condition="Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeWeather)">825</onright>
                     <onclick condition="!Library.HasContent(tvshows)">ActivateWindow(videos,files,return)</onclick>
                     <onclick condition="Library.HasContent(tvshows)">ActivateWindow(videos,tvshowtitles,return)</onclick>
                     <onup>ActivateWindow(3021)</onup>
@@ -3179,8 +3179,8 @@
                     <onleft condition="!Skin.HasSetting(HomeTVShows)">325</onleft>
                     <onleft condition="Skin.HasSetting(HomeTVShows) + !Skin.HasSetting(HomeMovies)">225</onleft>
                     <onleft condition="Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + !Skin.HasSetting(HomeHome)">525</onleft>
-                    <onleft condition="Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + System.GetBool(pvrmanager.enabled">925</onleft>
-                    <onleft condition="Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + !System.GetBool(pvrmanager.enabled">125</onleft>
+                    <onleft condition="Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + System.GetBool(pvrmanager.enabled)">925</onleft>
+                    <onleft condition="Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + !System.GetBool(pvrmanager.enabled)">125</onleft>
                     <onright>CancelAlarm(HomeTileMove,true)</onright>
                     <onright>CancelAlarm(HomeTileMoveTwo,true)</onright>
                     <onright>CancelAlarm(HomeTileMoveThree,true)</onright>
@@ -3603,8 +3603,8 @@
                         <onleft condition="!Skin.HasSetting(HomeTVShows)">303</onleft>
                         <onleft condition="Skin.HasSetting(HomeTVShows) + !Skin.HasSetting(HomeMovies)">203</onleft>
                         <onleft condition="Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + !Skin.HasSetting(HomeHome)">503</onleft>
-                        <onleft condition="Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + System.GetBool(pvrmanager.enabled">901</onleft>
-                        <onleft condition="Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + !System.GetBool(pvrmanager.enabled">101</onleft>
+                        <onleft condition="Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + System.GetBool(pvrmanager.enabled)">901</onleft>
+                        <onleft condition="Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + !System.GetBool(pvrmanager.enabled)">101</onleft>
                         <onright>402</onright>
                         <onup>425</onup>
                         <ondown>80</ondown>
@@ -4081,8 +4081,8 @@
                     <onleft condition="Skin.HasSetting(HomeMusic) + !Skin.HasSetting(HomeTVShows)">325</onleft>
                     <onleft condition="Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + !Skin.HasSetting(HomeMovies)">225</onleft>
                     <onleft condition="Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + !Skin.HasSetting(HomeHome)">525</onleft>
-                    <onleft condition="Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + System.GetBool(pvrmanager.enabled">925</onleft>
-                    <onleft condition="Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + !System.GetBool(pvrmanager.enabled">125</onleft>
+                    <onleft condition="Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + System.GetBool(pvrmanager.enabled)">925</onleft>
+                    <onleft condition="Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + !System.GetBool(pvrmanager.enabled)">125</onleft>
                     <onright>CancelAlarm(HomeTileMove,true)</onright>
                     <onright>CancelAlarm(HomeTileMoveTwo,true)</onright>
                     <onright>CancelAlarm(HomeTileMoveThree,true)</onright>
@@ -4148,8 +4148,8 @@
                         <onleft condition="Skin.HasSetting(HomeMusic) + !Skin.HasSetting(HomeTVShows)">303</onleft>
                         <onleft condition="Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + !Skin.HasSetting(HomeMovies)">203</onleft>
                         <onleft condition="Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + !Skin.HasSetting(HomeHome)">503</onleft>
-                        <onleft condition="Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + System.GetBool(pvrmanager.enabled">901</onleft>
-                        <onleft condition="Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + !System.GetBool(pvrmanager.enabled">101</onleft>
+                        <onleft condition="Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + System.GetBool(pvrmanager.enabled)">901</onleft>
+                        <onleft condition="Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + !System.GetBool(pvrmanager.enabled)">101</onleft>
                         <onright>CancelAlarm(HomeTileMove,true)</onright>
                         <onright>Control.Move(20,1)</onright>
                         <onright condition="!Skin.HasSetting(HomeWeather)">701</onright>
@@ -4493,8 +4493,8 @@
                     <onleft condition="Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeMusic) + !Skin.HasSetting(HomeTVShows)">325</onleft>
                     <onleft condition="Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + !Skin.HasSetting(HomeMovies)">225</onleft>
                     <onleft condition="Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + !Skin.HasSetting(HomeHome)">525</onleft>
-                    <onleft condition="Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + System.GetBool(pvrmanager.enabled">925</onleft>
-                    <onleft condition="Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + !System.GetBool(pvrmanager.enabled">125</onleft>
+                    <onleft condition="Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + System.GetBool(pvrmanager.enabled)">925</onleft>
+                    <onleft condition="Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + !System.GetBool(pvrmanager.enabled)">125</onleft>
                     <onright>CancelAlarm(HomeTileMove,true)</onright>
                     <onright>CancelAlarm(HomeTileMoveTwo,true)</onright>
                     <onright>CancelAlarm(HomeTileMoveThree,true)</onright>
@@ -5089,8 +5089,8 @@
                         <onleft condition="Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeMusic) + !Skin.HasSetting(HomeTVShows)">303</onleft>
                         <onleft condition="Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + !Skin.HasSetting(HomeMovies)">203</onleft>
                         <onleft condition="Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + !Skin.HasSetting(HomeHome)">503</onleft>
-                        <onleft condition="Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + System.GetBool(pvrmanager.enabled">901</onleft>
-                        <onleft condition="Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + !System.GetBool(pvrmanager.enabled">101</onleft>
+                        <onleft condition="Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + System.GetBool(pvrmanager.enabled)">901</onleft>
+                        <onleft condition="Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + !System.GetBool(pvrmanager.enabled)">101</onleft>
                         <onright>Control.Move(20,1)</onright>
                         <onright>801</onright>
                         <onup>725</onup>
@@ -5233,8 +5233,8 @@
                     <onleft condition="Skin.HasSetting(HomeWeather) + Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeMusic) + !Skin.HasSetting(HomeTVShows)">325</onleft>
                     <onleft condition="Skin.HasSetting(HomeWeather) + Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + !Skin.HasSetting(HomeMovies)">225</onleft>
                     <onleft condition="Skin.HasSetting(HomeWeather) + Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + !Skin.HasSetting(HomeHome)">525</onleft>
-                    <onleft condition="Skin.HasSetting(HomeWeather) + Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + System.GetBool(pvrmanager.enabled">925</onleft>
-                    <onleft condition="Skin.HasSetting(HomeWeather) + Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + !System.GetBool(pvrmanager.enabled">125</onleft>
+                    <onleft condition="Skin.HasSetting(HomeWeather) + Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + System.GetBool(pvrmanager.enabled)">925</onleft>
+                    <onleft condition="Skin.HasSetting(HomeWeather) + Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + !System.GetBool(pvrmanager.enabled)">125</onleft>
                     <onright>RunScript(special://skin/extras/scripts/setClearProperty.py,BounceRight)</onright>
                     <onclick>ActivateWindow(4)</onclick>
                     <onup>80</onup>
@@ -5283,8 +5283,8 @@
                         <onleft condition="Skin.HasSetting(HomeWeather) + Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeMusic) + !Skin.HasSetting(HomeTVShows)">303</onleft>
                         <onleft condition="Skin.HasSetting(HomeWeather) + Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + !Skin.HasSetting(HomeMovies)">203</onleft>
                         <onleft condition="Skin.HasSetting(HomeWeather) + Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + !Skin.HasSetting(HomeHome)">503</onleft>
-                        <onleft condition="Skin.HasSetting(HomeWeather) + Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + System.GetBool(pvrmanager.enabled">901</onleft>
-                        <onleft condition="Skin.HasSetting(HomeWeather) + Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + !System.GetBool(pvrmanager.enabled">101</onleft>
+                        <onleft condition="Skin.HasSetting(HomeWeather) + Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + System.GetBool(pvrmanager.enabled)">901</onleft>
+                        <onleft condition="Skin.HasSetting(HomeWeather) + Skin.HasSetting(HomePrograms) + Skin.HasSetting(HomeMusic) + Skin.HasSetting(HomeTVShows) + Skin.HasSetting(HomeMovies) + Skin.HasSetting(HomeHome) + !System.GetBool(pvrmanager.enabled)">101</onleft>
                         <onright>801</onright>
                         <onup>825</onup>
                         <ondown>80</ondown>
