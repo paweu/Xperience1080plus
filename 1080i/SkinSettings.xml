@@ -5,6 +5,7 @@
     <onload>SetFocus(4001)</onload>
     <onload condition="IsEmpty(Skin.String(music.name))">Skin.SetString(music.name,$LOCALIZE[14022])</onload>
     <onload condition="IsEmpty(Skin.String(rss.setting))">Skin.SetString(rss.setting,$LOCALIZE[1223])</onload>
+    <onload condition="IsEmpty(Skin.String(BackdropMultiTime))">Skin.SetString(BackdropMultiTime,15sec)</onload>
     <controls>
         <include>CommonSettingsItems</include>
         <include>SettingsHeader</include>
@@ -118,18 +119,18 @@
                     <include>SettingsCategoryButtonVars</include>
                 </control>
                 <control type="button" id="33">
+                    <description>Background Settings</description>
+                    <label>$LOCALIZE[41250]</label>
+                    <include>SettingsCategoryButtonVars</include>
+                </control>
+                <control type="button" id="34">
                     <description>Media Settings</description>
                     <label>$LOCALIZE[41190]</label>
                     <include>SettingsCategoryButtonVars</include>
                 </control>
-                <control type="button" id="34">
+                <control type="button" id="35">
                     <description>OSD Settings</description>
                     <label>$LOCALIZE[478]</label>
-                    <include>SettingsCategoryButtonVars</include>
-                </control>
-                <control type="button" id="35">
-                    <description>Background Settings</description>
-                    <label>$LOCALIZE[41250]</label>
                     <include>SettingsCategoryButtonVars</include>
                 </control>
                 <control type="button" id="36">
@@ -494,88 +495,12 @@
                 </control>
             </control>              
             
-            <!-- ============== --> 
-            <!-- View Settings  -->
-            <!-- ============== -->
+            <!-- =================== -->  
+            <!-- Background Settings -->
+            <!-- =================== -->  
             <control type="grouplist" id="5">
                 <include>SettingsCategoryGrouplistVars</include>
                 <visible>ControlGroup(3).HasFocus(33)</visible>
-                <control type="radiobutton" id="3001">
-                    <width>1210</width>
-                    <include>SettingsCategoryRadioButtonVars</include>
-                    <selected>Skin.HasSetting(HideFanart)</selected>
-                    <onclick>Skin.ToggleSetting(HideFanart)</onclick>
-                    <label>$LOCALIZE[41191]</label>
-                </control>
-                <control type="radiobutton" id="3003">
-                    <width>1210</width>
-                    <include>SettingsCategoryRadioButtonVars</include>
-                    <selected>Skin.HasSetting(MovieInformation.PlayTrailer)</selected>
-                    <onclick>Skin.ToggleSetting(MovieInformation.PlayTrailer)</onclick>
-                    <label>$LOCALIZE[41202]</label>
-                </control>
-            </control>
-            
-            <!-- OSD Settings -->
-            <control type="grouplist" id="5">
-                <include>SettingsCategoryGrouplistVars</include>
-                <visible>ControlGroup(3).HasFocus(34)</visible>
-                <control type="radiobutton" id="8001">
-                    <width>1210</width>
-                    <include>SettingsCategoryRadioButtonVars</include>
-                    <selected>Skin.HasSetting(OSDVisualisation.Enabled)</selected>
-                    <onclick condition="!Skin.HasSetting(OSDVisualisation.Enabled)">Skin.Reset(ArtistSlideShow.Enabled)</onclick>
-                    <onclick>Skin.ToggleSetting(OSDVisualisation.Enabled)</onclick>
-                    <label>$LOCALIZE[41240]</label>
-                </control>
-                <control type="radiobutton" id="8002">
-                    <width>1210</width>
-                    <include>SettingsCategoryRadioButtonVars</include>
-                    <selected>Skin.HasSetting(OSDVisualisation.ShowFanart)</selected>
-                    <onclick>Skin.ToggleSetting(OSDVisualisation.ShowFanart)</onclick>
-                    <visible>Skin.HasSetting(OSDVisualisation.Enabled)</visible>
-                    <label> • $LOCALIZE[41106]</label>
-                </control>
-                <control type="radiobutton" id="8003">
-                    <width>1210</width>
-                    <include>SettingsCategoryRadioButtonVars</include>
-                    <selected>Skin.HasSetting(ArtistSlideShow.Enabled)</selected>
-                    <onclick condition="!Skin.HasSetting(ArtistSlideShow.Enabled)">Skin.Reset(OSDVisualisation.Enabled)</onclick>
-                    <onclick>Skin.ToggleSetting(ArtistSlideShow.Enabled)</onclick>
-                    <enable>System.HasAddon(script.artistslideshow)</enable>
-                    <label>$LOCALIZE[41103]</label>
-                    <animation effect="fade" start="100" end="42" time="0" condition="!Control.IsEnabled(8002)">Conditional</animation>
-                </control>
-                <control type="radiobutton" id="8004">
-                    <width>1210</width>
-                    <include>SettingsCategoryRadioButtonVars</include>
-                    <selected>Skin.HasSetting(ArtistSlideShow.Animate)</selected>
-                    <onclick>Skin.ToggleSetting(ArtistSlideShow.Animate)</onclick>
-                    <visible>Skin.HasSetting(ArtistSlideShow.Enabled)</visible>
-                    <label> • $LOCALIZE[41105]</label>
-                </control>
-                <control type="radiobutton" id="8005">
-                    <width>1210</width>
-                    <include>SettingsCategoryRadioButtonVars</include>
-                    <selected>Skin.HasSetting(CDArt.Enabled)</selected>
-                    <onclick>Skin.ToggleSetting(CDArt.Enabled)</onclick>
-                    <label>$LOCALIZE[41107]</label>
-                </control>
-                <control type="radiobutton" id="8006">
-                    <width>1210</width>
-                    <include>SettingsCategoryRadioButtonVars</include>
-                    <selected>Skin.HasSetting(OSDDefaultSubtitleButton.Enabled)</selected>
-                    <onclick>Skin.ToggleSetting(OSDDefaultSubtitleButton.Enabled)</onclick>
-                    <enable>!IsEmpty(Skin.String(SubtitleScript_Path))</enable>
-                    <label>$LOCALIZE[41242]</label>
-                    <animation effect="fade" start="100" end="42" time="0" condition="!Control.IsEnabled(8005)">Conditional</animation>
-                </control>
-            </control>
-            
-            <!-- Background Settings -->
-            <control type="grouplist" id="5">
-                <include>SettingsCategoryGrouplistVars</include>
-                <visible>ControlGroup(3).HasFocus(35)</visible>
                 <control type="button" id="5000">
                     <width>1210</width>
                     <texturefocus border="150,3,150,3">windows/settings/images/right-focus-arrow-fo.png</texturefocus>
@@ -652,6 +577,173 @@
                     <onclick>ClearProperty(CustomDialog)</onclick>
                     <onclick>SetProperty(Dialog,$LOCALIZE[12600])</onclick>
                     <onclick>ActivateWindow(3002)</onclick>
+                </control>
+                <control type="group" id="5004">
+                    <description>Fake spin control</description>
+                    <visible>!IsEmpty(Skin.String(GlobalBackdropMulti)) | !IsEmpty(Skin.String(HomeMoviesMultiImage)) | !IsEmpty(Skin.String(HomeTVShowsMultiImage)) | !IsEmpty(Skin.String(HomeMusicMultiImage)) | !IsEmpty(Skin.String(HomeProgramsMultiImage)) | !IsEmpty(Skin.String(HomeWeatherMultiImage)) | !IsEmpty(Skin.String(HomeSettingsMultiImage))</visible>
+                    <width>1210</width>
+                    <height>77</height>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1210</width>
+                        <height>77</height>
+                        <texture border="90,3,90,3">views/list/other/separator.png</texture>
+                        <visible>!ControlGroup(5004).HasFocus</visible>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1210</width>
+                        <height>77</height>
+                        <texture border="150,3,150,3">windows/settings/images/right-focus.png</texture>
+                        <aspectratio>stretch</aspectratio>
+                        <visible>ControlGroup(5004).HasFocus</visible>
+                    </control>
+                    <control type="button" id="50041">
+                        <posx>1104</posx>
+                        <posy>8</posy>
+                        <width>43</width>
+                        <height>60</height>
+                        <onleft>50042</onleft>
+                        <onright>50042</onright>
+                        <onup>5010</onup>
+                        <ondown>1001</ondown>
+                        <texturefocus>buttons/spinctrl/arrow-down-fo.png</texturefocus>
+                        <texturenofocus>buttons/spinctrl/arrow-down-nf.png</texturenofocus>
+                        <onfocus condition="!IsEmpty(Window(Home).Property(ReloadSkin))">ReloadSkin</onfocus>
+                        <onfocus condition="!IsEmpty(Window(Home).Property(ReloadSkin))">ClearProperty(ReloadSkin,Home)</onfocus>
+                        <onclick condition="stringcompare(Skin.String(BackdropMultiTime),15sec)">Skin.SetString(BackdropMultiTime,30sec)</onclick>
+                        <onclick condition="stringcompare(Skin.String(BackdropMultiTime),1min)">Skin.SetString(BackdropMultiTime,15sec)</onclick>
+                        <onclick condition="stringcompare(Skin.String(BackdropMultiTime),30sec)">Skin.SetString(BackdropMultiTime,1min)</onclick>
+                        <onclick condition="stringcompare(Skin.String(BackdropMultiTime),15sec)">Skin.SetString(BackdropMultiTime,30sec)</onclick>
+                    </control>
+                    <control type="button" id="50042">
+                        <posx>1147</posx>
+                        <posy>8</posy>
+                        <width>43</width>
+                        <height>60</height>
+                        <onleft>50041</onleft>
+                        <onright>50041</onright>
+                        <onup>5010</onup>
+                        <ondown>1001</ondown>
+                        <texturefocus>buttons/spinctrl/arrow-up-fo.png</texturefocus>
+                        <texturenofocus>buttons/spinctrl/arrow-up-nf.png</texturenofocus>
+                        <onfocus condition="!IsEmpty(Window(Home).Property(ReloadSkin))">ReloadSkin</onfocus>
+                        <onfocus condition="!IsEmpty(Window(Home).Property(ReloadSkin))">ClearProperty(ReloadSkin,Home)</onfocus>
+                        <onclick condition="stringcompare(Skin.String(BackdropMultiTime),1min)">Skin.SetString(BackdropMultiTime,30sec)</onclick>
+                        <onclick condition="stringcompare(Skin.String(BackdropMultiTime),15sec)">Skin.SetString(BackdropMultiTime,1min)</onclick>
+                        <onclick condition="stringcompare(Skin.String(BackdropMultiTime),30sec)">Skin.SetString(BackdropMultiTime,15sec)</onclick>
+                        <onclick condition="stringcompare(Skin.String(BackdropMultiTime),1min)">Skin.SetString(BackdropMultiTime,30sec)</onclick>
+                    </control>
+                    <control type="button">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1120</width>
+                        <height>77</height>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <textoffsetx>35</textoffsetx>
+                        <font>Font-Condensed-S30-B</font>
+                        <textcolor>96FFFFFF</textcolor>
+                        <label>Set multi image time per image</label>
+                        <label2>$INFO[Skin.String(BackdropMultiTime)]</label2>
+                        <visible>!ControlGroup(5004).HasFocus</visible>
+                    </control>
+                    <control type="button">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1120</width>
+                        <height>77</height>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <textoffsetx>35</textoffsetx>
+                        <font>Font-Condensed-S30-B</font>
+                        <textcolor>white</textcolor>
+                        <label>Set multi image time per image</label>
+                        <label2>$INFO[Skin.String(BackdropMultiTime)]</label2>
+                        <visible>ControlGroup(5004).HasFocus</visible>
+                    </control>
+                </control>
+            </control>
+            
+            <!-- ============== --> 
+            <!-- View Settings  -->
+            <!-- ============== -->
+            <control type="grouplist" id="5">
+                <include>SettingsCategoryGrouplistVars</include>
+                <visible>ControlGroup(3).HasFocus(34)</visible>
+                <control type="radiobutton" id="3001">
+                    <width>1210</width>
+                    <include>SettingsCategoryRadioButtonVars</include>
+                    <selected>Skin.HasSetting(HideFanart)</selected>
+                    <onclick>Skin.ToggleSetting(HideFanart)</onclick>
+                    <label>$LOCALIZE[41191]</label>
+                </control>
+                <control type="radiobutton" id="3003">
+                    <width>1210</width>
+                    <include>SettingsCategoryRadioButtonVars</include>
+                    <selected>Skin.HasSetting(MovieInformation.PlayTrailer)</selected>
+                    <onclick>Skin.ToggleSetting(MovieInformation.PlayTrailer)</onclick>
+                    <label>$LOCALIZE[41202]</label>
+                </control>
+            </control>
+
+            <!-- ============ --> 
+            <!-- OSD Settings -->
+            <!-- ============ --> 
+            <control type="grouplist" id="5">
+                <include>SettingsCategoryGrouplistVars</include>
+                <visible>ControlGroup(3).HasFocus(35)</visible>
+                <control type="radiobutton" id="8001">
+                    <width>1210</width>
+                    <include>SettingsCategoryRadioButtonVars</include>
+                    <selected>Skin.HasSetting(OSDVisualisation.Enabled)</selected>
+                    <onclick condition="!Skin.HasSetting(OSDVisualisation.Enabled)">Skin.Reset(ArtistSlideShow.Enabled)</onclick>
+                    <onclick>Skin.ToggleSetting(OSDVisualisation.Enabled)</onclick>
+                    <label>$LOCALIZE[41240]</label>
+                </control>
+                <control type="radiobutton" id="8002">
+                    <width>1210</width>
+                    <include>SettingsCategoryRadioButtonVars</include>
+                    <selected>Skin.HasSetting(OSDVisualisation.ShowFanart)</selected>
+                    <onclick>Skin.ToggleSetting(OSDVisualisation.ShowFanart)</onclick>
+                    <visible>Skin.HasSetting(OSDVisualisation.Enabled)</visible>
+                    <label> • $LOCALIZE[41106]</label>
+                </control>
+                <control type="radiobutton" id="8003">
+                    <width>1210</width>
+                    <include>SettingsCategoryRadioButtonVars</include>
+                    <selected>Skin.HasSetting(ArtistSlideShow.Enabled)</selected>
+                    <onclick condition="!Skin.HasSetting(ArtistSlideShow.Enabled)">Skin.Reset(OSDVisualisation.Enabled)</onclick>
+                    <onclick>Skin.ToggleSetting(ArtistSlideShow.Enabled)</onclick>
+                    <enable>System.HasAddon(script.artistslideshow)</enable>
+                    <label>$LOCALIZE[41103]</label>
+                    <animation effect="fade" start="100" end="42" time="0" condition="!Control.IsEnabled(8002)">Conditional</animation>
+                </control>
+                <control type="radiobutton" id="8004">
+                    <width>1210</width>
+                    <include>SettingsCategoryRadioButtonVars</include>
+                    <selected>Skin.HasSetting(ArtistSlideShow.Animate)</selected>
+                    <onclick>Skin.ToggleSetting(ArtistSlideShow.Animate)</onclick>
+                    <visible>Skin.HasSetting(ArtistSlideShow.Enabled)</visible>
+                    <label> • $LOCALIZE[41105]</label>
+                </control>
+                <control type="radiobutton" id="8005">
+                    <width>1210</width>
+                    <include>SettingsCategoryRadioButtonVars</include>
+                    <selected>Skin.HasSetting(CDArt.Enabled)</selected>
+                    <onclick>Skin.ToggleSetting(CDArt.Enabled)</onclick>
+                    <label>$LOCALIZE[41107]</label>
+                </control>
+                <control type="radiobutton" id="8006">
+                    <width>1210</width>
+                    <include>SettingsCategoryRadioButtonVars</include>
+                    <selected>Skin.HasSetting(OSDDefaultSubtitleButton.Enabled)</selected>
+                    <onclick>Skin.ToggleSetting(OSDDefaultSubtitleButton.Enabled)</onclick>
+                    <enable>!IsEmpty(Skin.String(SubtitleScript_Path))</enable>
+                    <label>$LOCALIZE[41242]</label>
+                    <animation effect="fade" start="100" end="42" time="0" condition="!Control.IsEnabled(8005)">Conditional</animation>
                 </control>
             </control>
             

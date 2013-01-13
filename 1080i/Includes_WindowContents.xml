@@ -32,7 +32,6 @@
             <visible>Skin.HasSetting(BackgroundOpacity)</visible>
         </control>
     </include>
-
     <include name="CommonItemsHome">
         <include>CommonContent</include>
         <include>HomeCustomBackdrops</include>
@@ -81,6 +80,16 @@
         <include>CommonOverlay</include>
     </include>
     
+    <include name="BackdropMultiTime1">
+        <timeperimage>15000</timeperimage>
+    </include>
+    <include name="BackdropMultiTime2">
+        <timeperimage>30000</timeperimage>
+    </include>  
+    <include name="BackdropMultiTime3">
+        <timeperimage>60000</timeperimage>
+    </include>  
+    
 <!-- ============== -->
 <!-- Home Backdrops -->
 <!-- ============== -->
@@ -95,7 +104,9 @@
         </control> 
         <control type="multiimage">
             <include>FullscreenDimensions</include>
-            <timeperimage>10000</timeperimage>
+            <include condition="IsEmpty(Skin.String(BackdropMultiTime)) | stringcompare(Skin.String(BackdropMultiTime),15sec)">BackdropMultiTime1</include>
+            <include condition="stringcompare(Skin.String(BackdropMultiTime),30sec)">BackdropMultiTime2</include>
+            <include condition="stringcompare(Skin.String(BackdropMultiTime),1min)">BackdropMultiTime3</include>
             <randomize>true</randomize>
             <fadetime>600</fadetime>
             <loop>yes</loop>
@@ -107,7 +118,7 @@
             <description>Search results fanart</description>
             <include>FullscreenDimensions</include>
             <texture background="true">$INFO[Window(Home).Property(fanart_image)]</texture>
-            <fadetime>500</fadetime>
+            <fadetime>600</fadetime>
             <include>Animation_FanartFade</include>
             <visible>!IsEmpty(Window(Home).property(fanart_image)) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo]</visible>
         </control>
@@ -115,7 +126,7 @@
             <description>Music npl fanart</description>
             <include>FullscreenDimensions</include>
             <texture background="true">$INFO[Player.Art(fanart)]</texture>
-            <fadetime>500</fadetime>
+            <fadetime>600</fadetime>
             <include>Animation_FanartFade</include>
             <visible>ControlGroup(402).HasFocus + Player.HasAudio</visible>
         </control>
@@ -133,18 +144,20 @@
                 <include>FullscreenDimensions</include>
                 <texture fallback="special://skin/extras/backgrounds/01.jpg">$INFO[Skin.String(GlobalBackdropSingle)]</texture>
                 <include>visiblehidefadeinfo</include>
-                <visible>IsEmpty(Skin.String(GlobalBackdropMulti)) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo]</visible>
+                <visible>IsEmpty(Skin.String(GlobalBackdropMulti)) + IsEmpty(ListItem.Art(fanart)) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo]</visible>
             </control>
             <control type="multiimage">
                 <description>Custom Wallpaper Image</description>
                 <include>FullscreenDimensions</include>
-                <timeperimage>10000</timeperimage>
+                <include condition="IsEmpty(Skin.String(BackdropMultiTime)) | stringcompare(Skin.String(BackdropMultiTime),15sec)">BackdropMultiTime1</include>
+                <include condition="stringcompare(Skin.String(BackdropMultiTime),30sec)">BackdropMultiTime2</include>
+                <include condition="stringcompare(Skin.String(BackdropMultiTime),1min)">BackdropMultiTime3</include>
                 <randomize>true</randomize>
                 <fadetime>600</fadetime>
                 <loop>yes</loop>
                 <imagepath background="true">$INFO[Skin.String(GlobalBackdropMulti)]</imagepath>
                 <include>visiblehidefadeinfo</include>
-                <visible>!IsEmpty(Skin.String(GlobalBackdropMulti)) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo]</visible>
+                <visible>IsEmpty(ListItem.Art(fanart)) + !IsEmpty(Skin.String(GlobalBackdropMulti)) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo]</visible>
             </control>
         </control>
     </include>
@@ -159,7 +172,7 @@
             <aspectratio>scale</aspectratio>
             <include>FullscreenDimensions</include>
             <texture background="true">$INFO[ListItem.FileNameAndPath]</texture>
-            <fadetime>500</fadetime>
+            <fadetime>600</fadetime>
             <include>Animation_FanartFade</include>
             <visible>Window.IsVisible(pictures) + Container.HasFiles + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo]</visible>
         </control>
@@ -167,7 +180,7 @@
             <description>List Panel fanart</description>
             <include>FullscreenDimensions</include>
             <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
-            <fadetime>500</fadetime>
+            <fadetime>600</fadetime>
             <include>Animation_FanartFade</include>
             <visible>!Skin.HasSetting(HideFanart) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo]</visible>
         </control>
@@ -175,9 +188,46 @@
             <description>List Panel fanart</description>
             <include>FullscreenDimensions</include>
             <texture background="true">$INFO[Window(movieinformation).property(fanart_image)]</texture>
-            <fadetime>500</fadetime>
+            <fadetime>600</fadetime>
             <include>Animation_FanartFade</include>
             <visible>!IsEmpty(Window(movieinformation).property(fanart_image)) + Window.IsActive(movieinformation) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo]</visible>
+        </control>
+        <control type="group">
+           <description>Extrafanart</description>
+           <visible>!Skin.HasSetting(HideFanart) + Skin.HasSetting(ExtraFanart.Enabled) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo]</visible>
+           <animation effect="fade" start="0" end="100" time="600" delay="8600">WindowOpen</animation>
+           <animation effect="fade" start="0" end="100" time="600" delay="8600">Visible</animation>
+           <control type="multiimage">
+               <include>FullscreenDimensions</include>
+               <timeperimage>7400</timeperimage>
+               <randomize>true</randomize>
+               <fadetime>600</fadetime>
+               <loop>yes</loop>
+               <include>Animation_FanartFade</include>
+               <imagepath background="true">$INFO[ListItem.Path,,extrafanart]</imagepath>
+               <visible>Container.Content(movies)</visible>
+               <animation effect="fade" start="0" end="100" time="600" delay="8600" condition="!Container.OnNext + !Container.OnPrevious">Conditional</animation>
+           </control>
+           <control type="multiimage">
+               <include>FullscreenDimensions</include>
+               <timeperimage>7400</timeperimage>
+               <randomize>true</randomize>
+               <fadetime>600</fadetime>
+               <loop>yes</loop>
+               <include>Animation_FanartFade</include>
+               <imagepath background="true">$INFO[ListItem.Path,,extrafanart]</imagepath>
+               <visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
+           </control>
+           <control type="multiimage">
+               <include>FullscreenDimensions</include>
+               <timeperimage>7400</timeperimage>
+               <randomize>true</randomize>
+               <fadetime>600</fadetime>
+               <loop>yes</loop>
+               <include>Animation_FanartFade</include>
+               <imagepath background="true">$INFO[ListItem.Path,,../extrafanart]</imagepath>
+               <visible>Container.Content(episodes)</visible>
+           </control>
         </control>
     </include>
     <include name="BackgroundFanartMusicOSD">
@@ -185,14 +235,14 @@
             <description>Music OSD fanart</description>
             <include>FullscreenDimensions</include>
             <texture background="true" fallback="special://skin/extras/backgrounds/09.jpg">$INFO[Player.Art(fanart)]</texture>
-            <fadetime>500</fadetime>
+            <fadetime>600</fadetime>
             <include>Animation_FanartFade</include>
             <visible>!Skin.HasSetting(ArtistSlideShow.Enabled) + ![Skin.HasSetting(OSDVisualisation.Enabled) + !Skin.HasSetting(OSDVisualisation.ShowFanart)]</visible>
         </control>
         <control type="multiimage">
             <aspectratio>keep</aspectratio>
             <include>FullscreenDimensions</include>
-            <timeperimage>10000</timeperimage>
+            <timeperimage>7400</timeperimage>
             <randomize>true</randomize>
             <fadetime>600</fadetime>
             <loop>yes</loop>
