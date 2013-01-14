@@ -42,6 +42,7 @@
                 <description>TV guide</description>
                 <include>HomeLabel</include>
                 <label>$LOCALIZE[42160]</label>
+                <visible>System.HasAddon(script.tv.show.next.aired)</visible>
                 <animation effect="fade" start="100" end="50" time="300" tween="cubic" easing="inout" condition="!Container(3).HasFocus(3)">Conditional</animation>
                 <animation effect="zoom"  start="100" end="80" time="300" tween="cubic" easing="inout" center="auto" condition="!Container(3).HasFocus(3)">Conditional</animation>
             </control>
