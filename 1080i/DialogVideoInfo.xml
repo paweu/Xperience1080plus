@@ -5,6 +5,7 @@
 	<onunload>ClearProperty(fanart_image)</onunload>
 	<allowoverlay>no</allowoverlay>
 	<controls>	
+    
 		<!-- Movies, TVShows, Seasons, Episodes -->
 		<control type="group">
 			<posx>0</posx>
@@ -21,6 +22,153 @@
 			</animation>
 			<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)</visible>
 			
+			<!-- Cast Stuff -->
+			<control type="group">
+				<include>FullscreenDimensions</include>
+				<include>listEndAnimation</include>
+				<visible allowhiddenfocus="true">Control.HasFocus(9334) | Control.HasFocus(50) | Control.HasFocus(9337)</visible>
+				<animation type="Visible">
+					<effect type="slide" start="1920" end="0" time="600" delay="0" tween="sine" easing="inout" />
+				</animation>
+				<animation type="Hidden">
+					<effect type="zoom" start="100" end="75" center="640,540" time="300" tween="sine" easing="inout" />
+					<effect type="slide" end="2320" time="600" delay="0" tween="sine" easing="inout" />
+				</animation>
+				<animation type="Conditional" condition="Control.HasFocus(9337)">
+					<effect type="zoom" start="100" end="75" center="640,540" time="300" tween="sine" easing="inout" />
+					<effect type="slide" end="-2320" time="600" delay="0" tween="sine" easing="inout" />
+				</animation>
+
+				<control type="button" id="9334">
+					<onfocus>Action(left)</onfocus>
+					<onleft>50</onleft>
+				</control>
+				
+				<control type="list" id="50">
+					<posx>118</posx>
+					<posy>234</posy>
+					<width>1684</width>
+					<height>660</height>
+					<onleft>SetFocus(9335)</onleft>
+					<onright>SetFocus(9337)</onright>
+					<onup>-</onup>
+					<ondown>-</ondown>
+					<scrolltime>200</scrolltime>
+					<orientation>vertical</orientation>
+					<focusposition>0</focusposition>
+					<viewtype label="actor list">list</viewtype>
+					<itemlayout height="60">
+						<control type="label">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>950</width>
+							<height>60</height>
+							<label>$INFO[ListItem.label]</label>
+							<font>Font-Condensed-S40</font>
+							<textcolor>aawhite</textcolor>
+							<selectedcolor>white</selectedcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<scroll>no</scroll>
+						</control>	
+					</itemlayout>
+					<focusedlayout height="60">
+						<control type="label">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>950</width>
+							<height>60</height>
+							<label>$INFO[ListItem.label]</label>
+							<textcolor>eewhite</textcolor>
+							<font>Font-Condensed-S40</font>
+							<align>left</align>
+							<aligny>center</aligny>
+						</control>	
+					</focusedlayout>
+				</control>
+				
+				<control type="image">
+					<description>Actor image</description>
+					<posx>1348</posx>
+					<posy>220</posy>
+					<width>458</width>
+					<height>687</height>
+					<texture background="true">$INFO[Container(50).ListItem.Art(thumb)]</texture>
+					<fadetime>300</fadetime>
+					<aspectratio>scale</aspectratio>
+				</control>
+				<control type="image">
+					<description>Shadow</description>
+					<posx>1305</posx>
+					<posy>900</posy>
+					<width>544</width>
+					<height>125</height>
+					<texture>windows/home/item-shadow.png</texture>
+					<visible>!IsEmpty(Container(50).ListItem.Art(thumb))</visible>
+					<include>visiblehidefadeinfo</include>
+				</control>
+				
+			</control>
+            
+			<!-- Fullscreen Fanart -->
+			<control type="group">
+				<visible>Control.HasFocus(9337)</visible>
+				<include>listEndAnimation</include>
+				<animation type="Visible">
+					<effect type="zoom" start="75" end="100" center="1920,540" time="400" delay="200" tween="sine" easing="inout" />
+					<effect type="slide" start="1920" end="0" time="600" delay="0" tween="sine" easing="inout" />
+				</animation>
+				<animation type="Hidden">
+					<effect type="zoom" start="100" end="75" center="640,540" time="300" tween="sine" easing="inout" />
+					<effect type="slide" end="2320" time="600" delay="0" tween="sine" easing="inout" />
+				</animation>
+                
+                <control type="image">
+                    <description>Fullscreen fanart</description>
+                    <include>FullscreenDimensions</include>
+                    <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+                    <fadetime>600</fadetime>
+                    <include>Animation_FanartFade</include>
+                </control>
+<!--                 
+                <control type="group">
+                    <description>Fullscreen extra fanart</description>
+                    <control type="multiimage">
+                        <include>FullscreenDimensions</include>
+                        <fadetime>1200</fadetime>
+                        <timeperimage>6800</timeperimage>
+                        <randomize>true</randomize>
+                        <aspectratio align="center">scale</aspectratio>
+                        <imagepath background="true">$INFO[ListItem.Path,,extrafanart]</imagepath>
+                        <visible>Container.Content(Movies)</visible>
+                    </control>
+                    <control type="multiimage">
+                        <include>FullscreenDimensions</include>
+                        <fadetime>1200</fadetime>
+                        <timeperimage>6800</timeperimage>
+                        <randomize>true</randomize>
+                        <aspectratio align="center">scale</aspectratio>
+                        <imagepath background="true">$INFO[ListItem.FileNameAndPath,,extrafanart]</imagepath>
+                        <visible>Container.Content(TVShows) | Container.Content(Seasons)</visible>
+                    </control>
+                    <control type="multiimage">
+                        <include>FullscreenDimensions</include>
+                        <fadetime>1200</fadetime>
+                        <timeperimage>6800</timeperimage>
+                        <randomize>true</randomize>
+                        <aspectratio align="center">scale</aspectratio>
+                        <imagepath background="true">$INFO[ListItem.Path,,../extrafanart]</imagepath>
+                        <visible>Container.Content(episodes)</visible>
+                    </control>
+				</control>
+ -->               
+                <control type="image">
+                    <description>Fullscreen fanart overlay</description>
+                    <include>FullscreenDimensions</include>
+                    <texture>windows/common/fanartoverlay.png</texture>
+                </control>
+			</control>
+            
 			<!-- Title Label -->
 			<control type="group">
 				<visible>!Player.HasMedia + !Window.IsActive(infodialog) + !Window.IsActive(extendedprogressdialog)</visible>
@@ -151,7 +299,7 @@
 			
 			<!-- Rating -->
 			<control type="group">
-				<animation type="Conditional" condition="Player.HasMedia | Window.IsActive(busydialog) | Window.IsActive(volumebar) | Window.IsActive(infodialog) | Window.IsActive(extendedprogressdialog)">
+				<animation type="Conditional" condition="!Control.HasFocus(9337) + Player.HasMedia | Window.IsActive(busydialog) | Window.IsActive(volumebar) | Window.IsActive(infodialog) | Window.IsActive(extendedprogressdialog)">
 					<effect type="fade" start="100" end="8" tween="sine" easing="out" time="300" /> 
 					<effect type="zoom" start="100" end="50" center="1665,101" tween="sine" easing="inout" time="300" />
 				</animation>
@@ -191,10 +339,10 @@
 				<width>20</width>
 				<height>31</height>
 				<texture>dialogs/video-info/arrow.png</texture>
-				<visible>!Control.HasFocus(1110) + !Control.HasFocus(50)</visible>
+				<visible>!Control.HasFocus(1110) + !Control.HasFocus(50) + !Control.HasFocus(9337)</visible>
 			</control>
 			
-			<!-- Plot / Cast Labels -->
+			<!-- Plot / Cast / Fanart Labels -->
 			<control type="grouplist">
 				<animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
 				<animation type="Conditional" condition="Control.HasFocus(1110)">
@@ -218,7 +366,7 @@
 					<textcolor>eewhite</textcolor>
 					<align>left</align>
 					<scroll>false</scroll>
-					<animation effect="fade" start="100" end="50" time="200" tween="sine" easing="inout" condition="Control.HasFocus(9334) | Control.HasFocus(50) | Control.HasFocus(1110)">Conditional</animation>
+					<animation effect="fade" start="100" end="50" time="200" tween="sine" easing="inout" condition="Control.HasFocus(9334) | Control.HasFocus(9337) | Control.HasFocus(50) | Control.HasFocus(1110)">Conditional</animation>
 				</control>
 			   
 				<!-- Cast Label -->
@@ -232,7 +380,21 @@
 					<textcolor>eewhite</textcolor>
 					<align>left</align>
 					<scroll>false</scroll>	
-					<animation effect="fade" start="100" end="50" time="200" tween="sine" easing="inout" condition="Control.HasFocus(9333) | Control.HasFocus(71) | Control.HasFocus(9335) | Control.HasFocus(1101) | Control.HasFocus(1104) | Control.HasFocus(1105) | Control.HasFocus(1110)">Conditional</animation>
+					<animation effect="fade" start="100" end="50" time="200" tween="sine" easing="inout" condition="Control.HasFocus(9333) | Control.HasFocus(9337) | Control.HasFocus(71) | Control.HasFocus(9335) | Control.HasFocus(1101) | Control.HasFocus(1104) | Control.HasFocus(1105) | Control.HasFocus(1110)">Conditional</animation>
+				</control>
+                
+				<!-- Fanart Label -->
+				<control type="label">
+					<posx>118</posx>
+					<posy>0</posy>
+					<width min="50" max="400">auto</width>
+					<height>60</height>
+					<label>Fanart</label>
+					<font>Font-Condensed-S45</font>
+					<textcolor>eewhite</textcolor>
+					<align>left</align>
+					<scroll>false</scroll>	
+					<animation effect="fade" start="100" end="50" time="200" tween="sine" easing="inout" condition="Control.HasFocus(9333) | Control.HasFocus(9334) | Control.HasFocus(71) | Control.HasFocus(9335) |  Control.HasFocus(50) | Control.HasFocus(1101) | Control.HasFocus(1104) | Control.HasFocus(1105) | Control.HasFocus(1110)">Conditional</animation>
 				</control>
 			</control>
 			
@@ -286,10 +448,8 @@
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$VAR[VideoInfoArt]</texture>
 						</control>
-						<!-------------------------------> 
-						<!----------Disabled------------->
-						<!------------------------------->
-						<!--<control type="group">
+                        
+<!-- 						<control type="group">
 							<visible>Skin.HasSetting(ExtraFanart.Enabled) + !Container.Content(episodes)</visible>
 							<animation effect="fade" start="0" end="100" time="1000" delay="5000">WindowOpen</animation>
 							<control type="multiimage">
@@ -301,7 +461,7 @@
 								<timeperimage>6800</timeperimage>
 								<randomize>true</randomize>
 								<aspectratio align="center">scale</aspectratio>
-								<imagepath background="true">$INFO[ListItem.Path,,extrafanart]</imagepath>
+								<imagepath background="true" fallback=".">$INFO[ListItem.Path,,extrafanart]</imagepath>
 								<visible>Container.Content(Movies)</visible>
 							</control>
 							<control type="multiimage">
@@ -313,11 +473,12 @@
 								<fadetime>1200</fadetime>
 								<timeperimage>6800</timeperimage>
 								<aspectratio align="center">scale</aspectratio>
-								<imagepath background="true">$INFO[ListItem.FileNameAndPath,,extrafanart]</imagepath>
+								<imagepath background="true" fallback=".">$INFO[ListItem.FileNameAndPath,,extrafanart]</imagepath>
 								<visible>Container.Content(TVShows) | Container.Content(Seasons)</visible>
 							</control>
-						</control>-->
-						<control type="image">
+						</control>
+                        
+ -->						<control type="image">
 							<posx>534</posx>
 							<posy>0</posy>
 							<width>100</width>
@@ -780,90 +941,6 @@
 				</control>			
 			</control>
 
-			<!-- Cast Stuff -->
-			<control type="group">
-				<include>FullscreenDimensions</include>
-				<include>listEndAnimation</include>
-				<visible allowhiddenfocus="true">Control.HasFocus(9334) | Control.HasFocus(50)</visible>
-				<animation type="Visible">
-					<effect type="slide" start="1920" end="0" time="600" delay="0" tween="sine" easing="inout" />
-				</animation>
-				<animation type="Hidden">
-					<effect type="zoom" start="100" end="75" center="640,540" time="300" tween="sine" easing="inout" />
-					<effect type="slide" end="2320" time="600" delay="0" tween="sine" easing="inout" />
-				</animation>
-
-				<control type="button" id="9334">
-					<onfocus>Action(left)</onfocus>
-					<onleft>50</onleft>
-				</control>
-				
-				<control type="list" id="50">
-					<posx>118</posx>
-					<posy>234</posy>
-					<width>1684</width>
-					<height>660</height>
-					<onleft>SetFocus(9335)</onleft>
-					<onright>RunScript(special://skin/extras/scripts/setClearProperty.py,BounceRight)</onright>
-					<onup>-</onup>
-					<ondown>-</ondown>
-					<scrolltime>200</scrolltime>
-					<orientation>vertical</orientation>
-					<focusposition>0</focusposition>
-					<viewtype label="actor list">list</viewtype>
-					<itemlayout height="60">
-						<control type="label">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>950</width>
-							<height>60</height>
-							<label>$INFO[ListItem.label]</label>
-							<font>Font-Condensed-S40</font>
-							<textcolor>aawhite</textcolor>
-							<selectedcolor>white</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
-							<scroll>no</scroll>
-						</control>	
-					</itemlayout>
-					<focusedlayout height="60">
-						<control type="label">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>950</width>
-							<height>60</height>
-							<label>$INFO[ListItem.label]</label>
-							<textcolor>eewhite</textcolor>
-							<font>Font-Condensed-S40</font>
-							<align>left</align>
-							<aligny>center</aligny>
-						</control>	
-					</focusedlayout>
-				</control>
-				
-				<control type="image">
-					<description>Actor image</description>
-					<posx>1348</posx>
-					<posy>220</posy>
-					<width>458</width>
-					<height>687</height>
-					<texture background="true">$INFO[Container(50).ListItem.Art(thumb)]</texture>
-					<fadetime>300</fadetime>
-					<aspectratio>scale</aspectratio>
-				</control>
-				<control type="image">
-					<description>Shadow</description>
-					<posx>1305</posx>
-					<posy>900</posy>
-					<width>544</width>
-					<height>125</height>
-					<texture>windows/home/item-shadow.png</texture>
-					<visible>!IsEmpty(Container(50).ListItem.Art(thumb))</visible>
-					<include>visiblehidefadeinfo</include>
-				</control>
-				
-			</control>
-			
 			<!-- Poster -->
 			<control type="group">
 				<visible>Control.HasFocus(1110)</visible>
@@ -892,6 +969,7 @@
 					<width>458</width>
 					<height>687</height>
 					<texture background="true">$VAR[VideoInfoThumb]</texture>
+					<!--<texture background="true" diffuse="views/posterview/diffuse.png">$VAR[VideoInfoThumb]</texture>-->
 					<include>listEndAnimation</include>
 					<aspectratio>scale</aspectratio>
 				</control>
@@ -904,7 +982,7 @@
 					<texture>windows/home/item-shadow.png</texture>
 				</control>
 			</control>
-			
+
 		</control>
 		
 		<!-- Invisible Buttons -->
@@ -937,6 +1015,11 @@
 			<onfocus>SendClick(2003,5)</onfocus>
 			<onfocus>SetFocus(9333)</onfocus>
 			<animation effect="fade" start="0" end="100" time="0" delay="725">Focus</animation>
+		</control>
+        
+		<control type="button" id="9337">
+			<onright>RunScript(special://skin/extras/scripts/setClearProperty.py,BounceRight)</onright>
+			<onleft>SetFocus(9334)</onleft>
 		</control>
 		
 		<include>FadeBackgroundMovieInfo</include>
