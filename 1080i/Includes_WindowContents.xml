@@ -144,7 +144,7 @@
                 <include>FullscreenDimensions</include>
                 <texture fallback="special://skin/extras/backgrounds/01.jpg">$INFO[Skin.String(GlobalBackdropSingle)]</texture>
                 <include>visiblehidefadeinfo</include>
-                <visible>IsEmpty(Skin.String(GlobalBackdropMulti)) + IsEmpty(ListItem.Art(fanart)) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo]</visible>
+                <visible>IsEmpty(ListItem.Art(fanart)) + IsEmpty(Skin.String(GlobalBackdropMulti)) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo]</visible>
             </control>
             <control type="multiimage">
                 <description>Custom Wallpaper Image</description>
