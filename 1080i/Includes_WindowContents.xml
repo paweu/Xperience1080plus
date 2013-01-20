@@ -32,10 +32,30 @@
             <visible>Skin.HasSetting(BackgroundOpacity)</visible>
         </control>
     </include>
+    <include name="CommonOverlayClassic">
+        <control type="videowindow">
+            <include>FullscreenDimensions</include>
+            <visible>Skin.HasSetting(BackgroundVideo) + Player.HasVideo</visible>
+        </control>
+        <control type="image">
+            <include>FullscreenDimensions</include>
+            <texture>windows/common/stage-dark-overlay.png</texture>
+            <visible>Player.HasMedia | Window.IsActive(infodialog) | Window.IsActive(extendedprogressdialog) | Window.IsVisible(favourites) | Window.IsVisible(script-globalsearch-main.xml)  | Window.IsVisible(script-globalsearch-infodialog.xml)</visible>
+        </control>
+        <control type="image">
+            <include>FullscreenDimensions</include>
+            <texture>windows/common/stage-dark.png</texture>
+        </control>
+    </include>
     <include name="CommonItemsHome">
         <include>CommonContent</include>
         <include>HomeCustomBackdrops</include>
         <include>CommonOverlay</include>
+    </include>
+    <include name="CommonItemsHomeClassic">
+        <include>CommonContent</include>
+        <include>HomeCustomBackdrops</include>
+        <include>CommonOverlayClassic</include>
     </include>
     <include name="CommonItems">
         <include>CommonContent</include>
@@ -128,7 +148,15 @@
             <texture background="true">$INFO[Player.Art(fanart)]</texture>
             <fadetime>600</fadetime>
             <include>Animation_FanartFade</include>
-            <visible>ControlGroup(402).HasFocus + Player.HasAudio</visible>
+            <visible>[ControlGroup(402).HasFocus | [!Skin.HasSetting(HomeClassic.Enabled) + Container(20).HasFocus(4)]] + Player.HasAudio</visible>
+        </control>
+        <control type="image">
+            <description>Classic recent items fanart(s)</description>
+            <include>FullscreenDimensions</include>
+            <texture background="true">$INFO[Container(82).ListItem.Icon]</texture>
+            <fadetime>600</fadetime>
+            <include>Animation_FanartFade</include>
+            <visible>Control.HasFocus(82) + !Skin.HasSetting(HomeClassic.Enabled)</visible>
         </control>
     </include>
 
@@ -155,7 +183,7 @@
                 <randomize>true</randomize>
                 <fadetime>600</fadetime>
                 <loop>yes</loop>
-                <imagepath background="true">$INFO[Skin.String(GlobalBackdropMulti)]</imagepath>
+                <imagepath background="true" fallback=".">$INFO[Skin.String(GlobalBackdropMulti)]</imagepath>
                 <include>visiblehidefadeinfo</include>
                 <visible>IsEmpty(ListItem.Art(fanart)) + !IsEmpty(Skin.String(GlobalBackdropMulti)) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo]</visible>
             </control>

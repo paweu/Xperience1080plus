@@ -39,6 +39,7 @@
                     <onclick>Skin.ToggleSetting(HomeHome)</onclick>
                     <onclick>SetProperty(ReloadSkin,1,Home)</onclick>
                     <label>$LOCALIZE[41524]</label>
+                    <visible>Skin.HasSetting(HomeClassic.Enabled)</visible>
                 </control>
                 <control type="radiobutton" id="2102">
                     <width>1210</width>
@@ -64,6 +65,15 @@
                     <onclick>SetProperty(ReloadSkin,1,Home)</onclick>
                     <label>$LOCALIZE[2]</label>
                 </control>
+                <control type="radiobutton" id="2107">
+                    <width>1210</width>
+                    <include>SettingsDialogRadioButtonVars</include>
+                    <selected>!Skin.HasSetting(HomePictures)</selected>
+                    <onclick>Skin.ToggleSetting(HomePictures)</onclick>
+                    <onclick>SetProperty(ReloadSkin,1,Home)</onclick>
+                    <label>$LOCALIZE[1]</label>
+                    <visible>!Skin.HasSetting(HomeClassic.Enabled)</visible>
+                </control>
                 <control type="radiobutton" id="2105">
                     <width>1210</width>
                     <include>SettingsDialogRadioButtonVars</include>
@@ -71,6 +81,15 @@
                     <onclick>Skin.ToggleSetting(HomePrograms)</onclick>
                     <onclick>SetProperty(ReloadSkin,1,Home)</onclick>
                     <label>$LOCALIZE[41504]</label>
+                </control>
+                <control type="radiobutton" id="2108">
+                    <width>1210</width>
+                    <include>SettingsDialogRadioButtonVars</include>
+                    <selected>!Skin.HasSetting(HomeAddons)</selected>
+                    <onclick>Skin.ToggleSetting(HomeAddons)</onclick>
+                    <onclick>SetProperty(ReloadSkin,1,Home)</onclick>
+                    <label>$LOCALIZE[24001]</label>
+                    <visible>!Skin.HasSetting(HomeClassic.Enabled)</visible>
                 </control>
                 <control type="radiobutton" id="2106">
                     <width>1210</width>

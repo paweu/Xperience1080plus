@@ -847,5 +847,14 @@
             <effect type="fade" start="0" end="100" delay="1000" />
         </animation>
     </include>
-
+    
+    <include name="ShutdownFavAnimation">
+        <animation type="Conditional" condition="Window.IsActive(shutdownmenu)" reversible="false">
+            <effect type="zoom" start="100" end="92" time="300" delay="100" center="960,500" tween="sine" easing="out"  />
+        </animation>
+        <animation type="Conditional" condition="!Window.IsActive(shutdownmenu)" reversible="false">
+            <effect type="zoom" start="92" end="100" time="300" delay="250" center="960,500" tween="sine" easing="in"  />
+        </animation>
+    </include>
+    
 </includes>

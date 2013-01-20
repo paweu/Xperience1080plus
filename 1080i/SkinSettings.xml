@@ -315,6 +315,15 @@
             <control type="grouplist" id="5">
                 <visible>ControlGroup(3).HasFocus(32)</visible>
                 <include>SettingsCategoryGrouplistVars</include>
+                <control type="radiobutton" id="2006">
+                    <width>1210</width>
+                    <include>SettingsCategoryRadioButtonVars</include>
+                    <selected>!Skin.HasSetting(HomeClassic.Enabled)</selected>
+                    <onclick>Skin.ToggleSetting(HomeClassic.Enabled)</onclick>
+                    <onfocus condition="!IsEmpty(Window(Home).Property(ReloadSkin))">ReloadSkin</onfocus>
+                    <onfocus condition="!IsEmpty(Window(Home).Property(ReloadSkin))">ClearProperty(ReloadSkin,Home)</onfocus>
+                    <label>Use Classic Home</label>
+                </control>
                 <control type="button" id="2000">
                     <width>1210</width>
                     <texturefocus border="150,3,150,3">windows/settings/images/right-focus-arrow-fo.png</texturefocus>
@@ -334,6 +343,8 @@
                     <onclick>SetProperty(Dialog,$LOCALIZE[41136])</onclick>
                     <onclick>ActivateWindow(3003)</onclick>
                     <label>$LOCALIZE[41136]</label>
+                    <enable>Skin.HasSetting(HomeClassic.Enabled)</enable>
+                    <animation effect="fade" start="100" end="42" time="0" condition="!Control.IsEnabled(2001)">Conditional</animation>
                 </control>
                 <control type="button" id="2002">
                     <width>1210</width>
@@ -343,6 +354,8 @@
                     <onclick>SetProperty(Dialog,Home items colors)</onclick>
                     <onclick>ActivateWindow(3001)</onclick>
                     <label>Manage custom home items colors</label>
+                    <enable>Skin.HasSetting(HomeClassic.Enabled)</enable>
+                    <animation effect="fade" start="100" end="42" time="0" condition="!Control.IsEnabled(2002)">Conditional</animation>
                 </control>
                 <control type="button" id="2003">
                     <width>1210</width>
@@ -352,6 +365,8 @@
                     <onclick>SetProperty(Dialog,Home items extras)</onclick>
                     <onclick>ActivateWindow(3001)</onclick>
                     <label>Home items extras</label>
+                    <enable>Skin.HasSetting(HomeClassic.Enabled)</enable>
+                    <animation effect="fade" start="100" end="42" time="0" condition="!Control.IsEnabled(2003)">Conditional</animation>
                 </control>
                 <control type="radiobutton" id="2004">
                     <width>1210</width>
