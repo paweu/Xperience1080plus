@@ -633,6 +633,12 @@
                     <icon>windows/home/panel_icons/panel_menu_pictures.png</icon>
                     <visible>!Skin.HasSetting(HomePictures)</visible>
                 </item>             
+                <item id="10">
+                    <label>Trailers</label>
+                    <onclick>ActivateWindow(videos,plugin://plugin.video.the.trailers/,return)</onclick>
+                    <icon>windows/home/panel_icons/panel_menu_apple.png</icon>
+                    <visible>!Skin.HasSetting(HomeTrailers) + System.HasAddon(plugin.video.the.trailers)</visible>
+                </item>             
                 <item id="7">
                     <label>$LOCALIZE[41504]</label>
                     <onclick>ActivateWindow(programs)</onclick>

@@ -65,7 +65,7 @@
                     <onclick>SetProperty(ReloadSkin,1,Home)</onclick>
                     <label>$LOCALIZE[2]</label>
                 </control>
-                <control type="radiobutton" id="2107">
+                <control type="radiobutton" id="2105">
                     <width>1210</width>
                     <include>SettingsDialogRadioButtonVars</include>
                     <selected>!Skin.HasSetting(HomePictures)</selected>
@@ -74,7 +74,16 @@
                     <label>$LOCALIZE[1]</label>
                     <visible>!Skin.HasSetting(HomeClassic.Enabled)</visible>
                 </control>
-                <control type="radiobutton" id="2105">
+                <control type="radiobutton" id="2106">
+                    <width>1210</width>
+                    <include>SettingsDialogRadioButtonVars</include>
+                    <selected>!Skin.HasSetting(HomeTrailers)</selected>
+                    <onclick>Skin.ToggleSetting(HomeTrailers)</onclick>
+                    <onclick>SetProperty(ReloadSkin,1,Home)</onclick>
+                    <label>Trailers</label>
+                    <visible>!Skin.HasSetting(HomeClassic.Enabled) + System.HasAddon(plugin.video.the.trailers)</visible>
+                </control>
+                <control type="radiobutton" id="2107">
                     <width>1210</width>
                     <include>SettingsDialogRadioButtonVars</include>
                     <selected>!Skin.HasSetting(HomePrograms)</selected>
@@ -91,7 +100,7 @@
                     <label>$LOCALIZE[24001]</label>
                     <visible>!Skin.HasSetting(HomeClassic.Enabled)</visible>
                 </control>
-                <control type="radiobutton" id="2106">
+                <control type="radiobutton" id="2109">
                     <width>1210</width>
                     <include>SettingsDialogRadioButtonVars</include>
                     <selected>!Skin.HasSetting(HomeWeather)</selected>
