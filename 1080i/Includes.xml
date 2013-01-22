@@ -3,9 +3,11 @@
     <include file="Includes_Animations.xml" />
     <include file="Includes_ContextMenu.xml" />
     <include file="Includes_Home.xml" />
+    <!--
     <include file="Includes_Home_Classic.xml" />
     <include file="Includes_HomeSubmenu_Classic.xml" />
     <include file="Includes_HomeRecentlyAdded_Classic.xml" />
+    -->
     <include file="Includes_WindowContents.xml" />
     <include file="Includes_ViewHeader.xml" />
     <include file="Includes_Views.xml" />

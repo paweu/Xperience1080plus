@@ -261,6 +261,7 @@
             <align>center</align>
             <usecontrolcoords>true</usecontrolcoords>
             <visible>!Window.IsActive(favourites) + !Window.IsActive(script-globalsearch-main.xml) + !Window.IsActive(script-globalsearch-infodialog.xml) + !Window.IsActive(script-globalsearch-contextmenu.xml) + ![Window.IsVisible(virtualkeyboard) + !IsEmpty(Window.Property(HomeSearch))]</visible>
+            <!--
             <control type="image">
                 <description>Search</description>
                 <posx>0</posx>
@@ -272,6 +273,7 @@
                 <animation effect="zoom"  start="100" end="80" time="300" tween="cubic" easing="inout" center="19,50" condition="!Control.HasFocus(125)">Conditional</animation>
                 <visible>System.HasAddon(script.globalsearch)</visible>
             </control>
+            -->
             <control type="label">
                 <description>Live TV</description>
                 <include>HomeLabel</include>
@@ -411,20 +413,21 @@
             <width>2</width>
             <onup>21</onup>
             <orientation>horizontal</orientation>
-            <include condition="System.HasAddon(script.globalsearch) + System.GetBool(pvrmanager.enabled)">HomeControlListFocus2</include>
-            <include condition="!System.HasAddon(script.globalsearch) | !System.GetBool(pvrmanager.enabled)">HomeControlListFocus1</include>
-            <include condition="!System.HasAddon(script.globalsearch) + !System.GetBool(pvrmanager.enabled)">HomeControlListFocus0</include>
+            <include condition="System.GetBool(pvrmanager.enabled)">HomeControlListFocus1</include>
+            <include condition="!System.GetBool(pvrmanager.enabled)">HomeControlListFocus0</include>
             <scrolltime>0</scrolltime>
             <viewtype>list</viewtype>
             <itemlayout width="2" height="2"/>
             <focusedlayout width="2" height="2"/>
             <content>
+                <!--
                 <item id="1">
                     <label>$LOCALIZE[137]</label>
                     <onclick>-</onclick>
                     <property name="search">1</property>
                     <visible>System.HasAddon(script.globalsearch)</visible>
                 </item>
+                -->
                 <item id="9">
                     <label>$LOCALIZE[41220]</label>
                     <onclick>-</onclick>
@@ -507,7 +510,8 @@
             <visible>!Window.IsActive(favourites) + !Window.IsActive(script-globalsearch-main.xml) + !Window.IsActive(script-globalsearch-infodialog.xml) + !Window.IsActive(script-globalsearch-contextmenu.xml) + ![Window.IsVisible(virtualkeyboard) + !IsEmpty(Window.Property(HomeSearch))]</visible>
             <include>listEndAnimation</include>
             
-       <!-- Search -->       
+       <!-- Search -->
+       <!--
             <control type="group" id="100">
                 <width>2320</width>
                 <height>780</height>
@@ -668,7 +672,7 @@
                     </control>
                 </control>
             </control>
-         
+         -->
        <!-- Live TV -->
             <control type="group" id="900">
                 <width>2320</width>
