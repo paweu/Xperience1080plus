@@ -156,7 +156,7 @@
             <texture background="true">$INFO[Container(82).ListItem.Icon]</texture>
             <fadetime>600</fadetime>
             <include>Animation_FanartFade</include>
-            <visible>Control.HasFocus(82) + !Skin.HasSetting(HomeClassic.Enabled)</visible>
+            <visible>Control.HasFocus(82) + !Skin.HasSetting(HomeClassic.Enabled) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo]</visible>
         </control>
     </include>
 
