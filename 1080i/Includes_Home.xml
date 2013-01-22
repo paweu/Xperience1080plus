@@ -1,6 +1,7 @@
 <includes>
 
     <!--Home shutdown-favs Buttons-->
+    <!--
     <include name="shutdown-favs">
         <control type="group" id="80">
             <description>Home Buttons</description>
@@ -104,6 +105,7 @@
             </control>
         </control>
     </include>
+    -->
 
     <include name="HomeLabel">
         <width min="0" max="500">auto</width>
@@ -116,6 +118,7 @@
         <aligny>top</aligny>
     </include>
     
+    <!--
     <include name="HomeProfileInfoLabel">
         <posx>110</posx>
         <posy>46</posy>
@@ -134,6 +137,7 @@
             <effect type="slide" start="0,0" end="0,-55" time ="500" tween="cubic" easing="inout" />
         </animation>
     </include>
+    -->
  
     <include name="HomeDotIndicator">
         <posy>0</posy>
@@ -152,6 +156,7 @@
         <value>$INFO[Skin.String(HomePicturesMultiImage)]</value>
     </variable>
     
+    <!--
     <include name="HomeProfileInfo">
         <control type="group">
             <visible>!Window.IsActive(favourites) + !Window.IsActive(script-globalsearch-main.xml) + !Window.IsActive(script-globalsearch-infodialog.xml) + !Window.IsActive(script-globalsearch-contextmenu.xml) + ![Window.IsVisible(virtualkeyboard) + !IsEmpty(Window.Property(HomeSearch))] + !Skin.HasSetting(HideHomeProfileInfo)</visible>
@@ -224,6 +229,7 @@
             </control>
         </control>
     </include>
+    -->
 
     <include name="HomeControlListLabels">
         <control type="GroupList">
