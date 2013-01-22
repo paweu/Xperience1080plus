@@ -140,7 +140,7 @@
                         <icon>$INFO[Window.Property(RecentEpisode.1.Art(tvshow.fanart))]</icon>
                         <property name="EpisodeThumb">$INFO[Window.Property(RecentEpisode.1.Art(thumb))]</property>
                         <label>$INFO[Window.Property(RecentEpisode.1.Title)]</label>
-                        <label2>[COLOR=88FFFFFF]$INFO[Window.Property(RecentEpisode.1.TVshowTitle),, • ]S$INFO[Window.Property(RecentEpisode.1.Season),,]E$INFO[Window.Property(RecentEpisode.1.Episode),,][/COLOR]</label2>
+                        <label2>[COLOR=88FFFFFF]$INFO[Window.Property(RecentEpisode.1.TVshowTitle),, • ]$INFO[Window.Property(RecentEpisode.1.Season),S,]$INFO[Window.Property(RecentEpisode.1.Episode),E,][/COLOR]</label2>
                         <visible>!IsEmpty(Container(20).ListItem.Property(tvshows))</visible>
                     </item>
                     <item id="8">
@@ -149,7 +149,7 @@
                         <icon>$INFO[Window.Property(RecentEpisode.2.Art(tvshow.fanart))]</icon>
                         <property name="EpisodeThumb">$INFO[Window.Property(RecentEpisode.2.Art(thumb))]</property>
                         <label>$INFO[Window.Property(RecentEpisode.2.Title)]</label>
-                        <label2>[COLOR=88FFFFFF]$INFO[Window.Property(RecentEpisode.2.TVshowTitle),, • ]S$INFO[Window.Property(RecentEpisode.2.Season),,]E$INFO[Window.Property(RecentEpisode.2.Episode),,][/COLOR]</label2>
+                        <label2>[COLOR=88FFFFFF]$INFO[Window.Property(RecentEpisode.2.TVshowTitle),, • ]$INFO[Window.Property(RecentEpisode.2.Season),S,]$INFO[Window.Property(RecentEpisode.2.Episode),E,][/COLOR]</label2>
                         <visible>!IsEmpty(Container(20).ListItem.Property(tvshows))</visible>
                     </item>
                     <item id="9">
@@ -158,7 +158,7 @@
                         <icon>$INFO[Window.Property(RecentEpisode.3.Art(tvshow.fanart))]</icon>
                         <property name="EpisodeThumb">$INFO[Window.Property(RecentEpisode.3.Art(thumb))]</property>
                         <label>$INFO[Window.Property(RecentEpisode.3.Title)]</label>
-                        <label2>[COLOR=88FFFFFF]$INFO[Window.Property(RecentEpisode.3.TVshowTitle),, • ]S$INFO[Window.Property(RecentEpisode.3.Season),,]E$INFO[Window.Property(RecentEpisode.3.Episode),,][/COLOR]</label2>
+                        <label2>[COLOR=88FFFFFF]$INFO[Window.Property(RecentEpisode.3.TVshowTitle),, • ]$INFO[Window.Property(RecentEpisode.3.Season),S,]$INFO[Window.Property(RecentEpisode.3.Episode),E,][/COLOR]</label2>
                         <visible>!IsEmpty(Container(20).ListItem.Property(tvshows))</visible>
                     </item>
                     <item id="10">
@@ -167,7 +167,7 @@
                         <icon>$INFO[Window.Property(RecentEpisode.4.Art(tvshow.fanart))]</icon>
                         <property name="EpisodeThumb">$INFO[Window.Property(RecentEpisode.4.Art(thumb))]</property>
                         <label>$INFO[Window.Property(RecentEpisode.4.Title)]</label>
-                        <label2>[COLOR=88FFFFFF]$INFO[Window.Property(RecentEpisode.4.TVshowTitle),, • ]S$INFO[Window.Property(RecentEpisode.4.Season),,]E$INFO[Window.Property(RecentEpisode.4.Episode),,][/COLOR]</label2>
+                        <label2>[COLOR=88FFFFFF]$INFO[Window.Property(RecentEpisode.4.TVshowTitle),, • ]$INFO[Window.Property(RecentEpisode.4.Season),S,]$INFO[Window.Property(RecentEpisode.4.Episode),E,][/COLOR]</label2>
                         <visible>!IsEmpty(Container(20).ListItem.Property(tvshows))</visible>
                     </item>
                     <item id="11">
@@ -176,7 +176,7 @@
                         <icon>$INFO[Window.Property(RecentEpisode.5.Art(tvshow.fanart))]</icon>
                         <property name="EpisodeThumb">$INFO[Window.Property(RecentEpisode.5.Art(thumb))]</property>
                         <label>$INFO[Window.Property(RecentEpisode.5.Title)]</label>
-                        <label2>[COLOR=88FFFFFF]$INFO[Window.Property(RecentEpisode.5.TVshowTitle),, • ]S$INFO[Window.Property(RecentEpisode.5.Season),,]E$INFO[Window.Property(RecentEpisode.5.Episode),,][/COLOR]</label2>
+                        <label2>[COLOR=88FFFFFF]$INFO[Window.Property(RecentEpisode.5.TVshowTitle),, • ]$INFO[Window.Property(RecentEpisode.5.Season),S,]$INFO[Window.Property(RecentEpisode.5.Episode),E,][/COLOR]</label2>
                         <visible>!IsEmpty(Container(20).ListItem.Property(tvshows))</visible>
                     </item>
                     <item id="12">
@@ -185,7 +185,7 @@
                         <icon>$INFO[Window.Property(RecentEpisode.6.Art(tvshow.fanart))]</icon>
                         <property name="EpisodeThumb">$INFO[Window.Property(RecentEpisode.6.Art(thumb))]</property>
                         <label>$INFO[Window.Property(RecentEpisode.6.Title)]</label>
-                        <label2>[COLOR=88FFFFFF]$INFO[Window.Property(RecentEpisode.6.TVshowTitle),, • ]S$INFO[Window.Property(RecentEpisode.6.Season),,]E$INFO[Window.Property(RecentEpisode.6.Episode),,][/COLOR]</label2>
+                        <label2>[COLOR=88FFFFFF]$INFO[Window.Property(RecentEpisode.6.TVshowTitle),, • ]$INFO[Window.Property(RecentEpisode.6.Season),S,]$INFO[Window.Property(RecentEpisode.6.Episode),E,][/COLOR]</label2>
                         <visible>!IsEmpty(Container(20).ListItem.Property(tvshows))</visible>
                     </item>
         
@@ -194,42 +194,42 @@
                         <onclick>$INFO[Window.Property(RecentAlbum.1.Play)]</onclick>
                         <icon>$INFO[Window.Property(RecentAlbum.1.Art(fanart))]</icon>
                         <label>$INFO[Window.Property(RecentAlbum.1.Title)]</label>
-                        <label2>[COLOR=88FFFFFF]$INFO[Window.Property(RecentAlbum.1.Artist)] • $INFO[Window.Property(RecentAlbum.1.Year)][/COLOR]</label2>
+                        <label2>[COLOR=88FFFFFF]$INFO[Window.Property(RecentAlbum.1.Artist)]$INFO[Window.Property(RecentAlbum.1.Year), • ,][/COLOR]</label2>
                         <visible>!IsEmpty(Container(20).ListItem.Property(music))</visible>
                     </item>
                     <item id="14">
                         <onclick>$INFO[Window.Property(RecentAlbum.2.Play)]</onclick>
                         <icon>$INFO[Window.Property(RecentAlbum.2.Art(fanart))]</icon>
                         <label>$INFO[Window.Property(RecentAlbum.2.Title)]</label>
-                        <label2>[COLOR=88FFFFFF]$INFO[Window.Property(RecentAlbum.2.Artist)] • $INFO[Window.Property(RecentAlbum.2.Year)][/COLOR]</label2>
+                        <label2>[COLOR=88FFFFFF]$INFO[Window.Property(RecentAlbum.2.Artist)]$INFO[Window.Property(RecentAlbum.2.Year), • ,][/COLOR]</label2>
                         <visible>!IsEmpty(Container(20).ListItem.Property(music))</visible>
                     </item>
                     <item id="15">
                         <onclick>$INFO[Window.Property(RecentAlbum.3.Play)]</onclick>
                         <icon>$INFO[Window.Property(RecentAlbum.3.Art(fanart))]</icon>
                         <label>$INFO[Window.Property(RecentAlbum.3.Title)]</label>
-                        <label2>[COLOR=88FFFFFF]$INFO[Window.Property(RecentAlbum.3.Artist)] • $INFO[Window.Property(RecentAlbum.3.Year)][/COLOR]</label2>
+                        <label2>[COLOR=88FFFFFF]$INFO[Window.Property(RecentAlbum.3.Artist)]$INFO[Window.Property(RecentAlbum.3.Year), • ,][/COLOR]</label2>
                         <visible>!IsEmpty(Container(20).ListItem.Property(music))</visible>
                     </item>
                     <item id="16">
                         <onclick>$INFO[Window.Property(RecentAlbum.4.Play)]</onclick>
                         <icon>$INFO[Window.Property(RecentAlbum.4.Art(fanart))]</icon>
                         <label>$INFO[Window.Property(RecentAlbum.4.Title)]</label>
-                        <label2>[COLOR=88FFFFFF]$INFO[Window.Property(RecentAlbum.4.Artist)] • $INFO[Window.Property(RecentAlbum.4.Year)][/COLOR]</label2>
+                        <label2>[COLOR=88FFFFFF]$INFO[Window.Property(RecentAlbum.4.Artist)]$INFO[Window.Property(RecentAlbum.4.Year), • ,][/COLOR]</label2>
                         <visible>!IsEmpty(Container(20).ListItem.Property(music))</visible>
                     </item>
                     <item id="17">
                         <onclick>$INFO[Window.Property(RecentAlbum.5.Play)]</onclick>
                         <icon>$INFO[Window.Property(RecentAlbum.5.Art(fanart))]</icon>
                         <label>$INFO[Window.Property(RecentAlbum.5.Title)]</label>
-                        <label2>[COLOR=88FFFFFF]$INFO[Window.Property(RecentAlbum.5.Artist)] • $INFO[Window.Property(RecentAlbum.5.Year)][/COLOR]</label2>
+                        <label2>[COLOR=88FFFFFF]$INFO[Window.Property(RecentAlbum.5.Artist)]$INFO[Window.Property(RecentAlbum.5.Year), • ,][/COLOR]</label2>
                         <visible>!IsEmpty(Container(20).ListItem.Property(music))</visible>
                     </item>
                     <item id="18">
                         <onclick>$INFO[Window.Property(RecentAlbum.6.Play)]</onclick>
                         <icon>$INFO[Window.Property(RecentAlbum.6.Art(fanart))]</icon>
                         <label>$INFO[Window.Property(RecentAlbum.6.Title)]</label>
-                        <label2>[COLOR=88FFFFFF]$INFO[Window.Property(RecentAlbum.6.Artist)] • $INFO[Window.Property(RecentAlbum.6.Year)][/COLOR]</label2>
+                        <label2>[COLOR=88FFFFFF]$INFO[Window.Property(RecentAlbum.6.Artist)]$INFO[Window.Property(RecentAlbum.6.Year), • ,][/COLOR]</label2>
                         <visible>!IsEmpty(Container(20).ListItem.Property(music))</visible>
                     </item>
         

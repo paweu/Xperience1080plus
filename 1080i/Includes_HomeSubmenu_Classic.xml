@@ -42,7 +42,7 @@
         <font>Font-Condensed-S60</font>
         <textcolor>eewhite</textcolor>
         <shadowcolor>33000000</shadowcolor>
-        <label>$INFO[ListItem.label]</label>
+        <label>$INFO[ListItem.label,,]</label>
         <animation type="Conditional" condition="true" reversible="false">
             <effect type="fade" end="40" time="0" />
             <effect type="zoom" end="75" time="0" center="0,30" />
@@ -72,7 +72,7 @@
         <font>Font-Condensed-S60</font>
         <textcolor>eewhite</textcolor>
         <shadowcolor>33000000</shadowcolor>
-        <label> $INFO[ListItem.label]</label>
+        <label>$INFO[ListItem.label, ,]</label>
         <animation type="Conditional" condition="!Control.HasFocus(23)" reversible="true">
             <effect type="fade" start="100" end="40" time="250" />
         </animation>
